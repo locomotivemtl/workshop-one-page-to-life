@@ -1,7 +1,7 @@
 import Eleventy from "@11ty/eleventy";
 
 let elev;
-export default async function buildEleventy({ production = false }) {
+export default async function buildEleventy({ production }) {
     if(!elev) {
         elev = new Eleventy();
 

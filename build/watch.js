@@ -3,7 +3,7 @@ import buildEleventy from './tasks/eleventy.js'
 import compileScripts from './tasks/scripts.js'
 import compileStyles from './tasks/styles.js'
 
-buildEleventy();
+buildEleventy({ production: false });
 compileScripts();
 compileStyles();
 
@@ -21,7 +21,7 @@ server.init({
 server.watch([
     'views/**/*'
 ]).on('change', async () => {
-    await buildEleventy();
+    await buildEleventy({ production: false });
 })
 
 server.watch([
