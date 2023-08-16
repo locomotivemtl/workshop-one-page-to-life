@@ -1,0 +1,13 @@
+{% assign title = product.title %}
+{% assign tags = product.tags %}
+{% assign price = product.price %}
+
+<article>
+    <h3>{{ title }}</h3>
+
+    {% for tag in tags %}
+        <span>{{ tag }}</span><br>
+    {% endfor %}
+
+    <span>{{ price }}</span>
+</article>

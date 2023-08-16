@@ -1,0 +1,26 @@
+{
+    "name": "workshop-one-page-to-life",
+    "version": "0.0.1",
+    "description": "Front-end development: Bringing a one-page design to life. A workshop by Locomotive Inc.",
+    "keywords": [],
+    "author": "Locomotive Inc.",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "start": "node --experimental-json-modules --no-warnings build/watch.js",
+        "build": "node --experimental-json-modules --no-warnings build/build.js"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^2.0.1",
+        "browser-sync": "^2.29.3",
+        "esbuild": "^0.19.0",
+        "kleur": "^4.1.5",
+        "sass": "^1.65.1"
+    },
+    "stackblitz": {
+        "startCommand": "npm start"
+    }
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Floral Fusion Shirt",
+        "tags": ["Shirt"],
+        "price": "$149"
+    },
+    {
+        "title": "Blossom Touch Gloves",
+        "tags": ["Gloves"],
+        "price": "$59"
+    },
+    {
+        "title": "Beanie",
+        "tags": ["Hats"],
+        "price": "$39"
+    }
+]

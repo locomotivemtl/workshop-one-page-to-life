@@ -1,0 +1,22 @@
+{
+    "title": "FAQ",
+    "description": "Whether you have inquiries about shipping, returns, sizing, care instructions, or any other topic, we have curated a list of frequently asked questions to assist you. We believe that transparency and clear communication are essential in building a strong relationship with our valued customers like you.",
+    "items": [
+        {
+            "title": "How can I care for and maintain my SWAG garments?",
+            "content": "<p>To ensure the longevity and beauty of your SWAG garments, we recommend following these care instructions:<ul><li>Washing: We recommend following the care label instructions on each garment. In general, it's best to hand wash your SWAG pieces in cold water with a gentle detergent. Avoid soaking for extended periods and never wring or twist the fabric. After washing, gently squeeze out excess water and lay the garment flat to dry.</li><li>Ironing: If necessary, use a low-temperature iron or steam to remove wrinkles. Always iron inside out or place a cloth between the iron and the garment to protect delicate details and prints.</li><li>Special Care: Some SWAG pieces may have specific care requirements due to delicate fabrics or intricate embellishments. Please refer to the individual product care instructions provided with your purchase for any special care considerations.</li></ul>By following these care guidelines, you can help preserve the quality and beauty of your SWAG garments, ensuring that they continue to bloom and bring you joy for years to come.</p>"
+        },
+        {
+            "title": "What is the shipping timeframe for orders?",
+            "content": "<p>Phasellus consectetuer vestibulum elit. Morbi mollis tellus ac sapien. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Proin faucibus arcu quis ante. Nunc nec neque.</p>"
+        },
+        {
+            "title": "Do you offer international shipping?",
+            "content": "<p>Nam commodo suscipit quam. Etiam feugiat lorem non metus. Cras sagittis. Pellentesque ut neque. Vivamus elementum semper nisi.</p>"
+        },
+        {
+            "title": "What is your return/exchanger policy?",
+            "content": "<p>Praesent egestas tristique nibh. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Donec posuere vulputate arcu. Aliquam eu nunc. Praesent blandit laoreet nibh.</p>"
+        }
+    ]
+}
