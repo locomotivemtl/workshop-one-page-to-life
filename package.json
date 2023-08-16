@@ -6,6 +6,10 @@
     "author": "Locomotive Inc.",
     "license": "ISC",
     "type": "module",
+    "engines" : {
+        "node": ">=17.9",
+        "npm": ">=8.0"
+    },
     "scripts": {
         "start": "node --experimental-json-modules --no-warnings build/watch.js",
         "build": "node --experimental-json-modules --no-warnings build/build.js"
