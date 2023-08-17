@@ -6,11 +6,19 @@
 // ==========================================================================
 @import "settings/config.colors";
 @import "settings/config";
+@import "settings/variables";
 
 // Vendors
 // ==========================================================================
+@import "../../node_modules/@acab/reset.css/index.css";
 @import "../../node_modules/normalize.css/normalize";
 
 // Elements
 // ==========================================================================
 @import "document";
+
+// Comonents
+// ==========================================================================
+@import "components/container";
+@import "components/hero";
+@import "components/nav";

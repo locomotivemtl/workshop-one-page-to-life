@@ -1,0 +1,17 @@
+:root {
+    // Metrics
+    --unit: 20px;
+
+    // Font sizes
+    --font-size-small: 12px;
+    --font-size-body: 22px;
+    --font-size-huge: 232px;
+
+    // Grid
+    --grid-columns: 4;
+    --grid-gutter: var(--unit);
+
+    @media screen and (min-width: 1000px) {
+        --grid-columns: 12;
+    }
+}
