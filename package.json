@@ -7,7 +7,7 @@
     "license": "ISC",
     "type": "module",
     "engines": {
-        "node": ">=17.9",
+        "node": ">=16.20.0",
         "npm": ">=8.0"
     },
     "scripts": {
@@ -15,8 +15,7 @@
         "build": "node --experimental-json-modules --no-warnings build/build.js"
     },
     "dependencies": {
-        "normalize.css": "^8.0.1",
-        "reset.css": "github:mayank99/reset.css#v0.6.0"
+        "normalize.css": "^8.0.1"
     },
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",

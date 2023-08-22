@@ -8,9 +8,12 @@
 @import "settings/config";
 @import "settings/variables";
 
+// Generic
+// ==========================================================================
+@import "generic/reset";
+
 // Vendors
 // ==========================================================================
-@import "../../node_modules/reset.css/package/index";
 @import "../../node_modules/normalize.css/normalize";
 
 // Elements
