@@ -20,11 +20,8 @@ module.exports = function(eleventyConfig) {
     let options = {
         extname: '.liquid',
         dynamicPartials: true,
-        layouts: path.resolve(__dirname, 'views/layouts'),
-        root: [
-            path.resolve(__dirname, 'views/partials'),
-            path.resolve(__dirname, 'views/snippets')
-        ]
+        root: path.resolve(__dirname, 'views'),
+        layouts: path.resolve(__dirname, 'views/layouts')
     };
 
     // Set Liquid template engine with specified options

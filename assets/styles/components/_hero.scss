@@ -1,3 +1,31 @@
-.c-hero svg {
-    fill: currentColor;
+.c-hero {
+
+}
+
+.c-hero_inner {
+    display: flex;
+    padding: var(--grid-margin);
+    padding-top: 30vw;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100vh;
+}
+
+.c-hero_visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100% * math.div(3,12);
+}
+
+.c-hero_logo-wrapper {
+    // width: 100%;
+}
+
+.c-hero_content {
+    @include -container;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns),1fr);
+    gap: var(--grid-gutter);
 }

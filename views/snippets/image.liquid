@@ -1,0 +1,64 @@
+{%- comment -%} ------------------------------- {%- endcomment -%}
+{%- comment -%} ------------ DATA ------------- {%- endcomment -%}
+{%- comment -%} ------------------------------- {%- endcomment -%}
+
+{%- comment -%} -------------------------------- {%- endcomment -%}
+{%- comment -%} ------------ PROPS ------------- {%- endcomment -%}
+{%- comment -%} ------------------------------- {%- endcomment -%}
+{% liquid
+    assign _width = width | default: null
+    assign _height = height | default: null
+
+    assign _src = src | default: null
+    assign _alt = alt | default: null
+    assign _caption = caption | default: null
+    assign _attr = attr | default: null
+
+    assign _is_figure = is_figure | default: false
+    assign _is_lazy = is_lazy | default: true, allow_false: true
+
+    if _is_figure
+        assign _tag = 'figure'
+    else
+        assign _tag = 'div'
+    endif
+%}
+
+{%- comment -%} ---------------------------------- {%- endcomment -%}
+{%- comment -%} ------------ CLASSES ------------- {%- endcomment -%}
+{% liquid
+    assign _classes = classes | default: null
+    assign _modifiers = modifiers | default: null
+
+    if _is_lazy
+        assign _modifiers = _modifiers | append: ' -lazy-load'
+    endif
+
+    if _classes != null
+        assign _classes = ' ' | append: _classes
+    endif
+
+    if _modifiers != null
+        assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
+    endif
+%}
+
+{%- comment -%} ------------------------------- {%- endcomment -%}
+{%- comment -%} ---------- TEMPLATE ----------- {%- endcomment -%}
+{%- comment -%} ------------------------------- {%- endcomment -%}
+
+{% if _src %}
+    <{{ _tag }} class="c-image{{ _classes }}" {{_attr}}>
+        <img
+            class="c-image_img"
+            alt="{{ _alt }}"
+            width="{{ _width }}"
+            height="{{ _height }}"
+            src="{{ _src | image_url }}"
+            {% if _is_lazy %}
+                loading="lazy"
+                onload="this.classList.add('is-loaded'); this.parentNode.classList.add('is-loaded');"
+            {% endif %}
+        >
+    </{{ _tag }}>
+{% endif %}

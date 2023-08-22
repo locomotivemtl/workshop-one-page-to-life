@@ -1,4 +1,4 @@
-// Pulled from https://github.com/mayank99/reset.css/blob/main/package/index.css
+// Pulled and edited from https://github.com/mayank99/reset.css/blob/main/package/index.css
 *,
 *::before,
 *::after {
@@ -51,12 +51,28 @@
 }
 
 :where(button) {
-	border-style: solid;
+	display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background: none transparent;
+    color: inherit;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+    user-select: none;
 }
 
 :where(a) {
 	color: inherit;
 	text-underline-offset: 0.2ex;
+    text-decoration: none;
 }
 
 :where(ul, ol) {
@@ -74,10 +90,6 @@
 
 :where(p, h1, h2, h3, h4, h5, h6) {
 	overflow-wrap: break-word;
-}
-
-:where(h1, h2, h3) {
-	line-height: calc(1em + 0.5rem);
 }
 
 :where(hr) {
@@ -102,4 +114,14 @@
 	position: absolute !important;
 	white-space: nowrap !important;
 	border: 0 !important;
+}
+
+:where(svg) {
+    fill: currentColor;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    font-size: 1em;
+    font-weight: initial;
+    margin: 0;
 }

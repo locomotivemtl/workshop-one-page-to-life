@@ -1,0 +1,14 @@
+.c-image {
+    background-color: $color-black;
+}
+
+.c-image_img {
+    .c-image.-lazy-load & {
+        opacity: 0;
+        transition: opacity $speed $easing;
+
+        &.is-loaded {
+            opacity: 1;;
+        }
+    }
+}

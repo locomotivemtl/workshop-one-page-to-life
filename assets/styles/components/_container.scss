@@ -10,9 +10,21 @@
 // more functionalities and interfaces to it.
 // @link http://stackoverflow.com/a/13202141/140357
 
-.c-container {
+// MIXINS
+// ==========================================================================
+@mixin -container-commons {
     margin-right: auto;
     margin-left: auto;
-    padding-left: var(--unit);
-    padding-right: var(--unit);
+}
+
+@mixin -container {
+    @include -container-commons;
+    padding-left: var(--container-margin);
+    padding-right: var(--container-margin);
+}
+
+// CLASSES
+// ==========================================================================
+.c-container {
+    @include -container;
 }

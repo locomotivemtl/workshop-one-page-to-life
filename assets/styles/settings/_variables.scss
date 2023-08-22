@@ -1,6 +1,7 @@
 :root {
     // Metrics
     --unit: 20px;
+    --container-margin: var(--unit);
 
     // Font sizes
     --font-size-small: 12px;
@@ -8,8 +9,9 @@
     --font-size-huge: 232px;
 
     // Grid
-    --grid-columns: 4;
+    --grid-columns: 12;
     --grid-gutter: var(--unit);
+    --grid-margin: var(--unit);
 
     @media screen and (min-width: 1000px) {
         --grid-columns: 12;

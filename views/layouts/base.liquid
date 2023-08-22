@@ -6,12 +6,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="{{ '/assets/styles/main.css' | version }}">
+        <link id="main-css" rel="stylesheet" href="{{ '/assets/styles/main.css' | version }}" media="print" onload="this.media='all'; this.onload=null; this.isLoaded=true">
     </head>
     <body>
-        <div>
+        <header class="c-header">
+            <button class="c-header_menu-toggler">Menu</button>
+            <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
+                Shop <span aria-hidden="true">↗</span>
+            </a>
+            {% comment %} <nav class="c-menu"></nav> {% endcomment %}
+        </header>
+
+        <main data-module-scroll="main">
             {% block %}{% endblock %}
-        </div>
+        </main>
 
         <script src="{{ '/assets/scripts/app.js' | version }}" defer></script>
     </body>
