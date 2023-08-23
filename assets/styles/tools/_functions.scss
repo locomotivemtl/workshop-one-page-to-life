@@ -1,0 +1,80 @@
+
+// Returns calculation of a percentage of the viewport height.
+//
+// ```scss
+// .c-box {
+//     height: vh(100);
+// }
+// ```
+//
+// @param  {number} $number - The percentage number
+// @return {function<number>} in vh
+@function vh($number) {
+    @return calc(#{$number} * var(--vh, 1vh));
+}
+
+// Returns calculation of a percentage of the viewport width.
+//
+// ```scss
+// .c-box {
+//     width: vw(100);
+// }
+// ```
+//
+// @param  {number} $number - The percentage number
+// @return {function<number>} in vw
+@function vw($number) {
+    @return calc(#{$number} * var(--vw, 1vw));
+}
+
+// Removes the unit from the given number.
+//
+// @param  {number} $number The number to strip.
+// @return {number}
+
+@function strip-units($number) {
+    @return math.div($number, ($number * 0 + 1));
+}
+
+// Returns clamp of calculated preferred responsive font size
+// within a font size and breakpoint range.
+//
+// ```scss
+// h1 {
+//     font-size: responsive-size(30px, 60px, 1440);
+// }
+// ```
+//
+// @param  {number} $min-size   - Minimum font size in pixels.
+// @param  {number} $max-size   - Maximum font size in pixels.
+// @param  {number} $breakpoint - Maximum breakpoint.
+// @return {function<number, function<number>, number>}
+@function responsive-size($min-size, $max-size, $breakpoint) {
+    @return clamp(
+        $min-size,
+        calc(#{strip-units($max-size)}/#{strip-units($breakpoint)} * 100vw),
+        calc(#{strip-units($max-size)}/#{strip-units($breakpoint)} * 100vw)
+    );
+}
+
+// Returns calculation of a percentage of the grid cell width
+// with optional inset of grid gutter.
+//
+// ```scss
+// .c-box {
+//     width: grid-space(6/12);
+//     margin-left: grid-space(1/12, 1);
+// }
+// ```
+//
+// @param  {number} $number - The percentage spacer
+// @param  {number} $inset  - The grid gutter inset
+// @return {function<number>}
+
+@function grid-space($percentage, $inset: 0) {
+    @return calc(
+        #{$percentage} * (#{vw(100)} - 2 * var(--grid-margin, 0px)) - (
+                1 - #{$percentage}
+            ) * var(--grid-gutter, 0px) + #{$inset} * var(--grid-gutter, 0px)
+    );
+}

@@ -5,7 +5,7 @@
 .c-hero_inner {
     display: flex;
     padding: var(--grid-margin);
-    padding-top: 30vw;
+    padding-top: 25vw;
     flex-direction: column;
     justify-content: flex-end;
     min-height: 100vh;
@@ -17,15 +17,22 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100% * math.div(3,12);
+    z-index: 10;
 }
 
-.c-hero_logo-wrapper {
-    // width: 100%;
+.c-hero_logo {
+    transform: translate3d(0,0,0) scaleY(calc(1 + var(--progress)));
+    transform-origin: center bottom;
+    overflow: visible;
+
+    @for $i from 1 through 4 {
+        html.is-ready & path:nth-child(#{$i}) {
+            animation: logoCharReveal 1s $easing #{1s * 0.1 * $i} both;
+        }
+    }
 }
 
-.c-hero_content {
-    @include -container;
-    display: grid;
-    grid-template-columns: repeat(var(--grid-columns),1fr);
-    gap: var(--grid-gutter);
+@keyframes logoCharReveal {
+    0% { opacity: 0; transform: translate3d(0,-50%,0); }
+    100% { opacity: 1; transform: translate3d(0,0%,0); }
 }

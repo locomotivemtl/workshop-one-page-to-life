@@ -4,8 +4,7 @@
     --container-margin: var(--unit);
 
     // Font sizes
-    --font-size-small: 12px;
-    --font-size-body: 22px;
+    --font-size-body: #{responsive-size(16px, 21px, 1440px)};
     --font-size-huge: 232px;
 
     // Grid
@@ -13,7 +12,7 @@
     --grid-gutter: var(--unit);
     --grid-margin: var(--unit);
 
-    @media screen and (min-width: 1000px) {
-        --grid-columns: 12;
+    @media screen and (max-width: $from-medium) {
+        --grid-columns: 4;
     }
 }

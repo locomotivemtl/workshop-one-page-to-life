@@ -1,0 +1,31 @@
+.u-margin {
+    &-medium {
+        &-top {
+            margin-top: responsive-size(20px, 40px, 1440px);
+        }
+
+        &-bottom {
+            margin-bottom: responsive-size(20px, 40px, 1440px);
+        }
+    }
+
+    &-large {
+        &-top {
+            margin-top: responsive-size(80px, 250px, 1440px);
+        }
+
+        &-bottom {
+            margin-bottom: responsive-size(80px, 250px, 1440px);
+        }
+    }
+
+    &-huge {
+        &-top {
+            margin-top: responsive-size(100px, 300px, 1440px);
+        }
+
+        &-bottom {
+            margin-bottom: responsive-size(100px, 300px, 1440px);
+        }
+    }
+}

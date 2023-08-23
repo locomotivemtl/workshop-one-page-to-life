@@ -4,6 +4,10 @@
 // Main
 // ==========================================================================
 
+// Tools
+// ==========================================================================
+@import "tools/functions";
+
 // Settings
 // ==========================================================================
 @import "settings/config.colors";
@@ -29,8 +33,10 @@
 @import "components/header";
 @import "components/hero";
 @import "components/nav";
+@import "components/editorial";
 
 // Utilities
 // ==========================================================================
 
 @import "utilities/helpers";
+@import "utilities/spacing";

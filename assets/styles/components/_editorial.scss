@@ -1,0 +1,50 @@
+.c-editorial {
+    @include -container;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--grid-gutter);
+
+    @media (max-width: $to-medium) {
+        flex-direction: column;
+    }
+}
+
+.c-editorial_head {
+    width: grid-space(math.div(6,12));
+
+
+    .c-editorial.-faq & {
+        @media (min-width: $from-small) {
+            padding-right: grid-space(math.div(3,12), 1);
+        }
+    }
+
+    .c-editorial.-manifesto & {
+        @media (min-width: $from-small) {
+            padding-right: grid-space(math.div(4,12), 1);
+        }
+    }
+}
+
+.c-editorial_content {
+    flex: 1;
+
+    .c-editorial.-about & {
+        @media (min-width: $from-medium) {
+            columns: 2;
+            column-gap: var(--grid-gutter);
+        }
+
+        @media (max-width: $to-medium) {
+            p {
+                display: inline;
+            }
+        }
+    }
+
+    .c-editorial.-manifesto & {
+        @media (min-width: $from-small) {
+            padding-right: grid-space(math.div(2,12), 1);
+        }
+    }
+}
