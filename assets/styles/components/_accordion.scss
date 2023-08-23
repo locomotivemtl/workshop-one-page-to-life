@@ -1,0 +1,45 @@
+.c-accordion {
+    border-top: 1px solid;
+}
+
+.c-accordion_summary {
+    position: relative;
+    padding: .75em 0;
+    list-style: none;
+
+    &:after {
+        content: 'View';
+        display: inline-block;
+        float: right;
+        opacity: .5;
+    }
+
+    .c-accordion[open] & {
+        &:after {
+            content: 'Close'
+        }
+    }
+
+    .c-accordion:hover &{
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+.c-accordion_content {
+    display: none;
+    padding-top: .1em;
+    padding-bottom: 2.5em;
+    animation: none;
+
+    .c-accordion[open] & {
+        display: block;
+        animation: slideInUp $speed $easing both;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 1.5em;
+    }
+}

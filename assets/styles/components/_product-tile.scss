@@ -43,6 +43,7 @@
 
 .c-product-tile_content {
     position: relative;
+    padding-top: .5em;
 }
 
 .c-product-tile_title {
@@ -67,7 +68,7 @@
 
 .c-product-tile_cta {
     position: absolute;
-    top: 0;right: 0;
+    top: .5em;right: 0;
 
     &:before {
         content: '(+)';

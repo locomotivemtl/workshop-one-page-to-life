@@ -1,4 +1,20 @@
-<details>
-  <summary>{{ title }}</summary>
-  {{ content }}
+{% assign _attr = attr | default: null %}
+{% assign _classes = classes | default: null %}
+{% assign _modifiers = modifiers | default: null %}
+{% liquid
+    if _classes != null
+        assign _classes = ' ' | append: _classes
+    endif
+
+    if _modifiers != null
+        assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
+    endif
+%}
+
+
+<details class="c-accordion {{_classes}}" {{_attr}}>
+    <summary class="c-accordion_summary">{{ title }}</summary>
+    <div class="c-accordion_content">
+        {{ content }}
+    </div>
 </details>
