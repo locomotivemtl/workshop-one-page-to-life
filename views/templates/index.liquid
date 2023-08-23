@@ -5,7 +5,7 @@
         <h1 class="u-screen-reader-text">SWAG</h1>
         <figure class="c-hero_inner" aria-label="SWAG brand poster">
             <div class="c-hero_visual">
-                {% render 'snippets/image', src: '/assets/images/hero.jpg', width: 670, height: 900, attr: 'data-scroll data-scroll-speed="-0.1"' %}
+                {% render 'snippets/image', src: '/assets/images/hero.jpg', width: 700, height: 940, attr: 'data-scroll data-scroll-speed="-0.1"' %}
             </div>
 
             <svg class="c-hero_logo" x="0px" y="0px" viewBox="0 0 1400 515" style="enable-background:new 0 0 1400 515;" xml:space="preserve">
@@ -21,7 +21,7 @@
         </figure>
     </header>
 
-    <div class="c-editorial -about || u-margin-large-bottom">
+    <section class="c-editorial -about || u-margin-large-bottom">
         <div class="c-editorial_head">
             <h2>About</h2>
         </div>
@@ -29,18 +29,29 @@
             <p>Step into a world where African culture takes center stage, where vibrant colors intertwine with graceful minimalism. SWAG is not just a fashion brand;</p>
             <p>It's a fusion of heritage and style, a celebration of African roots with a contemporary twist.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="c-container || u-margin-large-bottom">
-        <h2>Products</h2>
-        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
-            {% for product in products %}
-                {% render 'snippets/product-tile', product: product %}
-            {% endfor %}
+    <section class="c-products || u-margin-large-bottom">
+        <h2 class="u-screen-reader-text">Products</h2>
+
+        <div class="c-products_primary">
+            {% render 'snippets/image', src: products[0].img.src, width: products[0].img.src.width, height: products[0].img.src.height %}
         </div>
-    </div>
 
-    <div class="c-editorial -faq || u-margin-huge-bottom">
+        <div class="c-products_secondary">
+            {% render 'snippets/product-tile', product: products[1] %}
+        </div>
+
+        <div data-scroll data-scroll-css-progress data-scroll-offset="0,100%">
+            <div class="c-products_list">
+                {% for product in products, offset: 2 %}
+                    {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="c-editorial -faq || u-margin-huge-bottom">
         <div class="c-editorial_head">
             <h2>FAQ</h2>
             <p>Whether you have inquiries about shipping, returns, sizing, care instructions, or any other topic, we have curated a list of frequently asked questions to assist you. We believe that transparency and clear communication are essential in building a strong relationship with our valued customers like you.</p>
@@ -53,16 +64,16 @@
                 %}
             {% endfor %}
         </div>
-    </div>
+    </section>
 
-    <div class="c-editorial -manifesto || u-margin-huge-bottom">
+    <section class="c-editorial -manifesto || u-margin-huge-bottom">
         <div class="c-editorial_head">
             <h2>Rooted in Culture, Blossoming with SWAG</h2>
         </div>
         <div class="c-editorial_content">
             <p>SWAG is more than just a fashion brand; it's a celebration of Africa's vibrant legacy, a testament to the fusion of traditional and contemporary aesthetics. Join us on a journey of self-expression and cultural appreciation, where African culture shines with floral elegance and minimalist flair. Embrace the essence of SWAG, and let your style reflect the beauty and richness of African heritage.</p>
         </div>
-    </div>
+    </section>
 
     {% for i in (0..10) %}
         <div style="display: block; height: 50vh; background: rgba(255,255,255,0.1);"></div>

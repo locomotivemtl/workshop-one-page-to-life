@@ -10,7 +10,7 @@
 
 // Settings
 // ==========================================================================
-@import "settings/config.colors";
+@import "settings/colors";
 @import "settings/config";
 @import "settings/variables";
 
@@ -21,10 +21,17 @@
 // Vendors
 // ==========================================================================
 @import "../../node_modules/normalize.css/normalize";
+@import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 // Elements
 // ==========================================================================
 @import "document";
+
+// Utilities
+// ==========================================================================
+
+@import "utilities/helpers";
+@import "utilities/spacing";
 
 // Comonents
 // ==========================================================================
@@ -34,9 +41,5 @@
 @import "components/hero";
 @import "components/nav";
 @import "components/editorial";
-
-// Utilities
-// ==========================================================================
-
-@import "utilities/helpers";
-@import "utilities/spacing";
+@import "components/products";
+@import "components/product-tile";

@@ -1,13 +1,33 @@
-{% assign title = product.title %}
-{% assign tags = product.tags %}
-{% assign price = product.price %}
+{% assign _attr = attr | default: null %}
+{% assign _classes = classes | default: null %}
+{% assign _modifiers = modifiers | default: null %}
+{% liquid
+    if _classes != null
+        assign _classes = ' ' | append: _classes
+    endif
 
-<article>
-    <h3>{{ title }}</h3>
+    if _modifiers != null
+        assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
+    endif
+%}
 
-    {% for tag in tags %}
-        <span>{{ tag }}</span><br>
-    {% endfor %}
+<article class="c-product-tile {{ _classes }}" {{_attr}}>
+    <div class="c-product-tile_inner">
+        {% render 'snippets/image', classes: 'c-product-tile_image', src: product.img.src, width: product.img.width, height: product.img.height %}
 
-    <span>{{ price }}</span>
+        <div class="c-product-tile_content">
+            <h3 class="c-product-tile_title">{{ product.title }}</h3>
+            {% for tag in product.tags %}
+                <span class="c-product-tile_tag">{{ tag }}</span>&nbsp;
+            {% endfor %}
+
+            <span class="c-product-tile_price">{{ product.price }}</span>
+
+            <span class="c-product-tile_cta" aria-hidden="true"></span>
+        </div>
+
+        <a href="#" class="c-product-tile_link">
+            <span class="u-screen-reader-text">Details</span>
+        </a>
+    </div>
 </article>

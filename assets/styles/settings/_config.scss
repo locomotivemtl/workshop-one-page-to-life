@@ -12,6 +12,8 @@ $easing: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 
 // Breakpoints
 // =============================================================================
+$from-tiny:     500px              !default;
+$to-tiny:       $from-tiny - 1    !default;
 $from-small:    700px              !default;
 $to-small:      $from-small - 1    !default;
 $from-medium:   1000px             !default;

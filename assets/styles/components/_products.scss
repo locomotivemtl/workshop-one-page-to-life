@@ -1,0 +1,33 @@
+.c-products {
+
+}
+
+.c-products_primary {
+    @include -margin-medium-bottom;
+}
+
+.c-products_secondary {
+    @include -container;
+    @include -margin-huge-bottom;
+    width: grid-space(math.div(1,2));
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.c-products_list {
+    @include -container;
+    display: grid;
+    gap: var(--grid-gutter);
+
+    @media (min-width: $from-medium) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: $from-small) and (max-width: $to-medium) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $from-tiny) and (max-width: $to-small) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

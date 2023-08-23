@@ -1,17 +1,62 @@
 [
     {
+        "title": "Coat",
+        "tags": ["Coat"],
+        "price": "$1295",
+        "img": {
+            "src": "/assets/images/products/coat.jpg",
+            "width": 1920,
+            "height": 1920
+        }
+    },
+    {
+        "title": "Zephyr Suit",
+        "tags": ["3-piece suit"],
+        "price": "$795",
+        "img": {
+            "src": "/assets/images/products/suit.jpg",
+            "width": 1230,
+            "height": 1440
+        }
+    },
+    {
         "title": "Floral Fusion Shirt",
         "tags": ["Shirt"],
-        "price": "$149"
+        "price": "$95",
+        "img": {
+            "src": "/assets/images/products/shirt.jpg",
+            "width": 620,
+            "height": 725
+        }
     },
     {
         "title": "Blossom Touch Gloves",
         "tags": ["Gloves"],
-        "price": "$59"
+        "price": "$45",
+        "img": {
+            "src": "/assets/images/products/gloves.jpg",
+            "width": 620,
+            "height": 725
+        }
     },
     {
-        "title": "Beanie",
-        "tags": ["Hats"],
-        "price": "$39"
+        "title": "Zephyr Hoodie",
+        "tags": ["Hoodie"],
+        "price": "$149",
+        "img": {
+            "src": "/assets/images/products/hoodie.jpg",
+            "width": 620,
+            "height": 725
+        }
+    },
+    {
+        "title": "Leather Jacket",
+        "tags": ["Jacket"],
+        "price": "$499",
+        "img": {
+            "src": "/assets/images/products/jacket.jpg",
+            "width": 620,
+            "height": 725
+        }
     }
 ]

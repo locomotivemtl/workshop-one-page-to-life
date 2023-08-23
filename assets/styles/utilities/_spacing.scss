@@ -1,31 +1,68 @@
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+// MEDIUM
+// ==========================================================================
+@mixin -margin-medium-top {
+    margin-top: responsive-size(20px, 40px, 1440px);
+}
+
+@mixin -margin-medium-bottom {
+    margin-bottom: responsive-size(20px, 40px, 1440px);
+}
+
+// LARGE
+// ==========================================================================
+@mixin -margin-large-top {
+    margin-top: responsive-size(80px, 250px, 1440px);
+}
+
+@mixin -margin-large-bottom {
+    margin-bottom: responsive-size(80px, 250px, 1440px);
+}
+
+// HUGE
+// ==========================================================================
+@mixin -margin-huge-top {
+    margin-top: responsive-size(100px, 300px, 1440px);
+}
+
+@mixin -margin-huge-bottom {
+    margin-bottom: responsive-size(100px, 300px, 1440px);
+}
+
+// ==========================================================================
+// CLASSES
+// ==========================================================================
 .u-margin {
     &-medium {
         &-top {
-            margin-top: responsive-size(20px, 40px, 1440px);
+            @include -margin-medium-top;
         }
 
         &-bottom {
-            margin-bottom: responsive-size(20px, 40px, 1440px);
+            @include -margin-medium-bottom;
         }
     }
 
     &-large {
         &-top {
-            margin-top: responsive-size(80px, 250px, 1440px);
+            @include -margin-large-top;
         }
 
         &-bottom {
-            margin-bottom: responsive-size(80px, 250px, 1440px);
+            @include -margin-large-bottom;
         }
     }
 
     &-huge {
         &-top {
-            margin-top: responsive-size(100px, 300px, 1440px);
+            @include -margin-huge-top;
         }
 
         &-bottom {
-            margin-bottom: responsive-size(100px, 300px, 1440px);
+            @include -margin-huge-bottom;
         }
     }
 }

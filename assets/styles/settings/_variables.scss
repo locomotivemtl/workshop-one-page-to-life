@@ -1,4 +1,8 @@
 :root {
+    // Colors
+    --color: #{$color-lightest};
+    --color-bg: #{$color-darkest};
+
     // Metrics
     --unit: 20px;
     --container-margin: var(--unit);

@@ -1,0 +1,90 @@
+.c-product-tile {
+    // position: relative;
+}
+
+.c-product-tile_inner {
+    position: relative;
+
+    .c-products_item & {
+        transition: transform .125s $easing;
+    }
+
+    @media (min-width: $from-medium) {
+        @for $i from 0 through 4 {
+            .c-products_item:nth-child(4n+#{$i}) & {
+                transform: translate3d(0,calc((33% * #{$i - 2 - 0.5} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+
+    @media (min-width: $from-small) and (max-width: $to-medium) {
+        @for $i from 0 through 3 {
+            .c-products_item:nth-child(3n+#{$i}) & {
+                transform: translate3d(0,calc((33% * #{$i - 1.5} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+
+    @media (min-width: $from-tiny) and (max-width: $to-small) {
+        @for $i from 0 through 2 {
+            .c-products_item:nth-child(2n+#{$i}) & {
+                transform: translate3d(0,calc((33% * #{$i - 1} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+}
+
+.c-product-tile_image {
+    .c-product-tile:hover &,
+    .c-product-tile:focus-within & {
+        transform: scaleX(-1);
+    }
+}
+
+.c-product-tile_content {
+    position: relative;
+}
+
+.c-product-tile_title {
+    margin-bottom: 0;
+}
+
+.c-product-tile_tag {
+    display: inline-block;
+    margin-right: .5em;
+    opacity: .5;
+
+    .c-product-tile:hover &,
+    .c-product-tile:focus-within & {
+        opacity: 1;
+    }
+}
+
+.c-product-tile_price {
+    display: block;
+    margin-top: 1em;
+}
+
+.c-product-tile_cta {
+    position: absolute;
+    top: 0;right: 0;
+
+    &:before {
+        content: '(+)';
+    }
+
+    .c-product-tile:hover &,
+    .c-product-tile:focus-within & {
+        &:before {
+            content: 'Details';
+            text-decoration: underline;
+        }
+    }
+}
+
+.c-product-tile_link {
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    z-index: 10;
+}
