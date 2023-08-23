@@ -19,7 +19,8 @@ server.init({
 })
 
 server.watch([
-    'views/**/*'
+    'views/**/*',
+    'data/**/*'
 ]).on('change', async () => {
     await buildEleventy({ production: false });
 })
