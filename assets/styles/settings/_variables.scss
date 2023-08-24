@@ -9,7 +9,7 @@
 
     // Font sizes
     --font-size-body: #{responsive-size(16px, 21px, 1440px)};
-    --font-size-huge: 232px;
+    --font-size-huge: #{responsive-size(90px, 232px, 1440px)};
 
     // Grid
     --grid-columns: 12;

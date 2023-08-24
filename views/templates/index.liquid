@@ -31,18 +31,39 @@
         </div>
     </section>
 
+    <figure class="c-fancy-gallery" data-scroll data-scroll-css-progress data-scroll-module-progress data-scroll-offset="100%,100%" data-module-fancy-gallery>
+        <div class="c-fancy-gallery_sticky" data-fancy-gallery="sticky">
+            <div class="c-fancy-gallery_visuals">
+                {% for visual in gallery %}
+                    <div class="c-fancy-gallery_item" data-fancy-gallery="item">
+                        {% render 'snippets/image', src: visual.src, width: visual.width, height: visual.height, focusPoint: visual.focusPoint, attr: 'data-fancy-gallery="image"' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="c-fancy-gallery_spacer"></div>
+        <figcaption class="c-fancy-gallery_caption" data-scroll data-scroll-css-progress data-scroll-module-progress data-module-fancy-gallery-caption data-scroll-offset="33%,100%">
+            {% assign splitCaption = 'Where African Heritage Meets Minimalist Chic' | split: ' ' %}
+            {% for word in splitCaption %}
+                <span class="c-fancy-gallery_word">
+                    <span class="c-fancy-gallery_word-inner" data-fancy-gallery-caption="word">{{word}}</span>
+                </span>
+            {% endfor %}
+        </figcaption>
+    </figure>
+
     <section class="c-products || u-margin-large-bottom">
         <h2 class="u-screen-reader-text">Products</h2>
 
         <div class="c-products_primary">
-            {% render 'snippets/image', src: products[0].img.src, width: products[0].img.src.width, height: products[0].img.src.height %}
+            {% render 'snippets/image', src: products[0].img.src, width: products[0].img.width, height: products[0].img.height %}
         </div>
 
         <div class="c-products_secondary">
             {% render 'snippets/product-tile', product: products[1] %}
         </div>
 
-        <div data-scroll data-scroll-css-progress data-scroll-offset="0,100%">
+        <div data-scroll data-scroll-css-progress data-scroll-offset="-33%,66%">
             <div class="c-products_list">
                 {% for product in products, offset: 2 %}
                     {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}

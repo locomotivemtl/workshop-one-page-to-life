@@ -9,6 +9,8 @@
     assign _width = width | default: null
     assign _height = height | default: null
 
+    assign _focusPoint = focusPoint | default: false
+
     assign _src = src | default: null
     assign _alt = alt | default: null
     assign _caption = caption | default: null
@@ -55,9 +57,14 @@
             width="{{ _width }}"
             height="{{ _height }}"
             src="{{ _src | image_url }}"
+
             {% if _is_lazy %}
                 loading="lazy"
                 onload="this.classList.add('is-loaded'); this.parentNode.classList.add('is-loaded');"
+            {% endif %}
+
+            {% if _focusPoint %}
+                style="--focus-point-x: {{ _focusPoint.x }}; --focus-point-y: {{ _focusPoint.y }};"
             {% endif %}
         >
     </{{ _tag }}>

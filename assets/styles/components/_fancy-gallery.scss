@@ -1,0 +1,128 @@
+.c-fancy-gallery {
+    position: relative;
+}
+
+.c-fancy-gallery_sticky {
+    position: sticky;
+    top: 0;left: 0;
+    width: vw(100);
+    height: vh(100);
+    z-index: 10;
+
+    // DEBUG
+    counter-reset: progress calc(var(--progress) * 100);
+    &:before {
+        display: block;
+        content: counter(progress);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: chartreuse;
+        z-index: 9999;
+    }
+}
+
+.c-fancy-gallery_visuals {
+    position: absolute;
+    top: 0;
+    // top: 50%;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    align-items: center;
+    // transform: translateY(-50%);
+    display: grid;
+    padding: var(--container-margin);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2.5vw var(--grid-gutter);
+    overflow: hidden;
+}
+
+.c-fancy-gallery_item {
+    position: relative;
+    background-color: var(--color-bg);
+
+    &:first-child {
+        grid-column: 7 / 9;
+        grid-row: 2 / 3;
+        z-index: 10;
+    }
+
+    // FIRST ROW
+    // ==========================================================================
+
+    &:nth-child(2) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    &:nth-child(3) {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+    }
+
+    &:nth-child(4) {
+        grid-column: -3 / -1;
+        grid-row: 1 / 2;
+    }
+
+    // SECOND ROW
+    // ==========================================================================
+    &:nth-child(5) {
+        grid-column: 4 / 6;
+        grid-row: 2 / 3;
+    }
+
+    // THIRD ROW
+    // ==========================================================================
+    &:nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+
+    &:nth-child(7) {
+        grid-column: 7 / 9;
+        grid-row: 3 / 4;
+    }
+
+    &:nth-child(8) {
+        grid-column: -3 / -1;
+        grid-row: 3 / 4;
+    }
+}
+
+.c-fancy-gallery_spacer {
+    height: 200vh;
+}
+
+.c-fancy-gallery_caption {
+    position: relative;
+    @include -padding-huge-bottom;
+    font-size: var(--font-size-huge);
+    line-height: 0.85;
+    text-align: center;
+
+    // DEBUG
+    counter-reset: progress calc(var(--progress) * 100);
+    &:before {
+        display: block;
+        content: counter(progress);
+        position: sticky;
+        top: 0;
+        right: 0;
+        color: red;
+        z-index: 9999;
+        font-size: 21px;
+        text-align: right;
+    }
+}
+
+.c-fancy-gallery_word {
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 115%, 0% 115%);
+}
+
+.c-fancy-gallery_word-inner {
+    display: block;
+}

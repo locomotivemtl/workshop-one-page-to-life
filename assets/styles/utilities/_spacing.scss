@@ -2,7 +2,10 @@
 // MIXINS
 // ==========================================================================
 
-// MEDIUM
+// MARGINS
+// ==========================================================================
+
+// Medium
 // ==========================================================================
 @mixin -margin-medium-top {
     margin-top: responsive-size(20px, 40px, 1440px);
@@ -12,7 +15,7 @@
     margin-bottom: responsive-size(20px, 40px, 1440px);
 }
 
-// LARGE
+// Large
 // ==========================================================================
 @mixin -margin-large-top {
     margin-top: responsive-size(80px, 250px, 1440px);
@@ -22,7 +25,7 @@
     margin-bottom: responsive-size(80px, 250px, 1440px);
 }
 
-// HUGE
+// Huge
 // ==========================================================================
 @mixin -margin-huge-top {
     margin-top: responsive-size(100px, 300px, 1440px);
@@ -30,6 +33,39 @@
 
 @mixin -margin-huge-bottom {
     margin-bottom: responsive-size(100px, 300px, 1440px);
+}
+
+// PADDING
+// ==========================================================================
+
+// Medium
+// ==========================================================================
+@mixin -padding-medium-top {
+    padding-top: responsive-size(20px, 40px, 1440px);
+}
+
+@mixin -padding-medium-bottom {
+    padding-bottom: responsive-size(20px, 40px, 1440px);
+}
+
+// Large
+// ==========================================================================
+@mixin -padding-large-top {
+    padding-top: responsive-size(80px, 250px, 1440px);
+}
+
+@mixin -padding-large-bottom {
+    padding-bottom: responsive-size(80px, 250px, 1440px);
+}
+
+// Huge
+// ==========================================================================
+@mixin -padding-huge-top {
+    padding-top: responsive-size(100px, 300px, 1440px);
+}
+
+@mixin -padding-huge-bottom {
+    padding-bottom: responsive-size(100px, 300px, 1440px);
 }
 
 // ==========================================================================
@@ -63,6 +99,38 @@
 
         &-bottom {
             @include -margin-huge-bottom;
+        }
+    }
+}
+
+.u-padding {
+    &-medium {
+        &-top {
+            @include -padding-medium-top;
+        }
+
+        &-bottom {
+            @include -padding-medium-bottom;
+        }
+    }
+
+    &-large {
+        &-top {
+            @include -padding-large-top;
+        }
+
+        &-bottom {
+            @include -padding-large-bottom;
+        }
+    }
+
+    &-huge {
+        &-top {
+            @include -padding-huge-top;
+        }
+
+        &-bottom {
+            @include -padding-huge-bottom;
         }
     }
 }

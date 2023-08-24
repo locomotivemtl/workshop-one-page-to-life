@@ -36,10 +36,8 @@ function init() {
 
     // Bind window resize event with default vars
     const resizeEndEvent = new CustomEvent(CUSTOM_EVENT.RESIZE_END)
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', debounce(() => {
         $html.style.setProperty('--vw', `${document.documentElement.clientWidth * 0.01}px`)
-        debounce(() => {
-            window.dispatchEvent(resizeEndEvent)
-        }, 200, false)
-    })
+        window.dispatchEvent(resizeEndEvent)
+    }, 200))
 }
