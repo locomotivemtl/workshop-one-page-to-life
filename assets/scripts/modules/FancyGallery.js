@@ -7,7 +7,9 @@ export default class extends module {
         super(m);
 
         this.$sticky = this.$('sticky')[0];
+        this.$visualsContainer = this.$('visuals-container')[0];
         this.$items = Array.from(this.$('item'));
+        this.$images = Array.from(this.$('image'));
     }
 
     init() {
@@ -18,22 +20,20 @@ export default class extends module {
     }
 
     computeTl() {
-        console.log('computeTl');
-
+        // Get rid of old timeline & reset everything
         this.tl?.kill?.();
         this.tl = null;
-        gsap.set([...this.$items,this.$('image')], { clearProps: 'all' })
+        gsap.set([...this.$items,this.$images], { clearProps: 'all' })
 
-        // console.log(window.innerWidth);
-
+        // RAF to make sure clearProps is effective before new computing
         requestAnimationFrame(() => {
             this.tl = gsap.timeline({});
 
             const singleDuration = 1;
-            const stickyBCR = this.$sticky.getBoundingClientRect();
+            const containerBCR = this.$visualsContainer.getBoundingClientRect();
             const targetCoords = { // centered
-                left: stickyBCR.width/2,
-                top: stickyBCR.height/2
+                left: containerBCR.width/2,
+                top: containerBCR.height/2
             };
 
             for(let i = 0; i < this.$items.length; i++) {

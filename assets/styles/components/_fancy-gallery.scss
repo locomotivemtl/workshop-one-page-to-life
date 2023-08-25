@@ -1,5 +1,29 @@
 .c-fancy-gallery {
     position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.c-fancy-gallery_sticky-area {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    height: calc(100% + 200vh);
+    width: 100%;
+
+    // DEBUG
+    // background-color: rgba(chartreuse, .5);
+}
+
+.c-fancy-gallery_sticky-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: vh(200);
+    background-color: var(--color-bg);
+    opacity: calc(1 - var(--progress));
+    z-index: 50;
 }
 
 .c-fancy-gallery_sticky {
@@ -10,27 +34,27 @@
     z-index: 10;
 
     // DEBUG
-    counter-reset: progress calc(var(--progress) * 100);
-    &:before {
-        display: block;
-        content: counter(progress);
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: chartreuse;
-        z-index: 9999;
-    }
+    // counter-reset: progress calc(var(--progress) * 100);
+    // &:before {
+    //     display: block;
+    //     content: counter(progress);
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     color: chartreuse;
+    //     z-index: 9999;
+    // }
 }
 
 .c-fancy-gallery_visuals {
     position: absolute;
-    top: 0;
-    // top: 50%;
+    // top: 0;
+    top: 50%;
     left: 0;
     width: 100%;
     min-height: 100%;
     align-items: center;
-    // transform: translateY(-50%);
+    transform: translateY(-50%);
     display: grid;
     padding: var(--container-margin);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
@@ -104,18 +128,18 @@
     text-align: center;
 
     // DEBUG
-    counter-reset: progress calc(var(--progress) * 100);
-    &:before {
-        display: block;
-        content: counter(progress);
-        position: sticky;
-        top: 0;
-        right: 0;
-        color: red;
-        z-index: 9999;
-        font-size: 21px;
-        text-align: right;
-    }
+    // counter-reset: progress calc(var(--progress) * 100);
+    // &:before {
+    //     display: block;
+    //     content: counter(progress);
+    //     position: sticky;
+    //     top: 0;
+    //     right: 0;
+    //     color: red;
+    //     z-index: 9999;
+    //     font-size: 21px;
+    //     text-align: right;
+    // }
 }
 
 .c-fancy-gallery_word {

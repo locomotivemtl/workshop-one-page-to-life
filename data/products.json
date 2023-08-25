@@ -6,7 +6,11 @@
         "img": {
             "src": "/assets/images/products/coat.jpg",
             "width": 1920,
-            "height": 1920
+            "height": 1920,
+            "focusPoint": {
+                "x": "center",
+                "y": "18%"
+            }
         }
     },
     {

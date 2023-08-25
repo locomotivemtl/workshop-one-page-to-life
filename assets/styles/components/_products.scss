@@ -2,11 +2,17 @@
 
 }
 
-.c-products_primary {
+.c-products_poster {
     @include -margin-medium-bottom;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.c-products_secondary {
+.c-products_poster-image {
+    transform-origin: var(--focus-point-x, "center") var(--focus-point-y, "center");
+    transform: translate3d(0,0,0) scale(calc(1 + (1 - var(--progress)) * 0.5));
+}
+
+.c-products_highlight {
     @include -container;
     @include -margin-huge-bottom;
     width: grid-space(math.div(1,2));
