@@ -4,7 +4,7 @@
 
 .c-products_poster {
     @include -margin-medium-bottom;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
 }
 
 .c-products_poster-image {
@@ -15,9 +15,12 @@
 .c-products_highlight {
     @include -container;
     @include -margin-huge-bottom;
-    width: grid-space(math.div(1,2));
     margin-right: 0;
     margin-left: auto;
+
+    @media (min-width: $from-small) {
+        width: grid-space(math.div(1,2));
+    }
 }
 
 .c-products_list {

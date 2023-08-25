@@ -16,8 +16,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100% * math.div(3,12);
     z-index: 10;
+
+    @media (min-width: $from-small) {
+        width: 100% * math.div(3,12);
+    }
+
+    @media (max-width: $to-small) and (min-aspect-ratio: 1 / 1) {
+        width: calc(700/940 * 75vmin);
+    }
+
+    @media (max-width: $to-small) and (max-aspect-ratio: 1 / 1) {
+        width: calc(940/700 * 50vmin);
+    }
 }
 
 .c-hero_logo {

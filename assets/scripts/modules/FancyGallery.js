@@ -25,6 +25,8 @@ export default class extends module {
         this.tl = null;
         gsap.set([...this.$items,this.$images], { clearProps: 'all' })
 
+        if(window.innerWidth < 700) return
+
         // RAF to make sure clearProps is effective before new computing
         requestAnimationFrame(() => {
             this.tl = gsap.timeline({});
