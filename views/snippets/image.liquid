@@ -1,20 +1,15 @@
-{%- comment -%} ------------------------------- {%- endcomment -%}
-{%- comment -%} ------------ DATA ------------- {%- endcomment -%}
-{%- comment -%} ------------------------------- {%- endcomment -%}
-
 {%- comment -%} -------------------------------- {%- endcomment -%}
 {%- comment -%} ------------ PROPS ------------- {%- endcomment -%}
 {%- comment -%} ------------------------------- {%- endcomment -%}
 {% liquid
-    assign _width = width | default: null
-    assign _height = height | default: null
+    assign _width = width | default: nil
+    assign _height = height | default: nil
 
-    assign _focusPoint = focusPoint | default: false
+    assign _focus_point = focusPoint | default: false
 
-    assign _src = src | default: null
-    assign _alt = alt | default: null
-    assign _caption = caption | default: null
-    assign _attr = attr | default: null
+    assign _src = src | default: nil
+    assign _alt = alt | default: nil
+    assign _attr = attr | default: nil
 
     assign _is_figure = is_figure | default: false
     assign _is_lazy = is_lazy | default: true, allow_false: true
@@ -28,19 +23,20 @@
 
 {%- comment -%} ---------------------------------- {%- endcomment -%}
 {%- comment -%} ------------ CLASSES ------------- {%- endcomment -%}
+{%- comment -%} ------------------------------- {%- endcomment -%}
 {% liquid
-    assign _classes = classes | default: null
-    assign _modifiers = modifiers | default: null
+    assign _classes = classes | default: nil
+    assign _modifiers = modifiers | default: nil
 
     if _is_lazy
         assign _modifiers = _modifiers | append: ' -lazy-load'
     endif
 
-    if _classes != null
+    if _classes != nil
         assign _classes = ' ' | append: _classes
     endif
 
-    if _modifiers != null
+    if _modifiers != nil
         assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
     endif
 %}
@@ -48,23 +44,20 @@
 {%- comment -%} ------------------------------- {%- endcomment -%}
 {%- comment -%} ---------- TEMPLATE ----------- {%- endcomment -%}
 {%- comment -%} ------------------------------- {%- endcomment -%}
-
 {% if _src %}
-    <{{ _tag }} class="c-image{{ _classes }}" {{_attr}}>
+    <{{ _tag }} class="c-image{{ _classes }}" {{ _attr }}>
         <img
             class="c-image_img"
             alt="{{ _alt }}"
             width="{{ _width }}"
             height="{{ _height }}"
-            src="{{ _src | image_url }}"
-
+            src="{{ _src }}"
             {% if _is_lazy %}
                 loading="lazy"
                 onload="this.classList.add('is-loaded'); this.parentNode.classList.add('is-loaded');"
             {% endif %}
-
-            {% if _focusPoint %}
-                style="--focus-point-x: {{ _focusPoint.x }}; --focus-point-y: {{ _focusPoint.y }};"
+            {% if _focus_point %}
+                style="--focus-point-x: {{ _focus_point.x }}; --focus-point-y: {{ _focus_point.y }};"
             {% endif %}
         >
     </{{ _tag }}>
