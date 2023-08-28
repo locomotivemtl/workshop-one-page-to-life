@@ -2,16 +2,6 @@
 
 }
 
-.c-products_poster {
-    @include -margin-medium-bottom;
-    overflow: hidden;
-}
-
-.c-products_poster-image {
-    transform-origin: var(--focus-point-x, "center") var(--focus-point-y, "center");
-    transform: translate3d(0,0,0) scale(calc(1 + (1 - var(--progress)) * 0.5));
-}
-
 .c-products_highlight {
     @include -container;
     @include -margin-huge-bottom;

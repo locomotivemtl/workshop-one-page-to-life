@@ -1,0 +1,28 @@
+{
+    "title": "Featured look",
+    "description": "<p>Pharetra consequat justo eu mattis ut enim imperdiet. Aenean dui lectus sed vivamus. Ultrices est facilisis pellentesque tellus.</p>",
+    "columns": [
+        {
+            "content": "Banana Field <br> Rattan Platform <br> Hat"
+        },
+        {
+            "content": "Designed by Thebe Magugu <br> 100% Hemp Fibers <br> Made in Africa <br> Vegan"
+        },
+        {
+            "content": "Blossom"
+        },
+        {
+            "content": "Available for international <br> delivery"
+        }
+    ],
+    "foot": "2023",
+    "img": {
+        "src": "/assets/images/products/coat.jpg",
+        "width": 1920,
+        "height": 1920,
+        "focusPoint": {
+            "x": "center",
+            "y": "18%"
+        }
+    }
+}
