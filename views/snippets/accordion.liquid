@@ -1,20 +1,24 @@
-{% assign _attr = attr | default: null %}
-{% assign _classes = classes | default: null %}
-{% assign _modifiers = modifiers | default: null %}
 {% liquid
-    if _classes != null
+    assign _title = title | default: nil
+    assign _content = content | default: nil
+    assign _attr = attr | default: nil
+    assign _classes = classes | default: nil
+    assign _modifiers = modifiers | default: nil
+
+    if _classes != nil
         assign _classes = ' ' | append: _classes
     endif
 
-    if _modifiers != null
+    if _modifiers != nil
         assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
     endif
 %}
 
-
-<details class="c-accordion {{_classes}}" {{_attr}}>
-    <summary class="c-accordion_summary">{{ title }}</summary>
+<details class="c-accordion {{ _classes }}" {{ _attr }}>
+    <summary class="c-accordion_summary">{{ _title }}</summary>
     <div class="c-accordion_content">
-        {{ content }}
+        <div class="c-wysiwyg">
+            {{ _content }}
+        </div>
     </div>
 </details>
