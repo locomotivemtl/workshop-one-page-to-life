@@ -1,6 +1,10 @@
 .c-fancy-gallery {
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+    // Fix for safari iOS not registering the clip-path without this (probably bc of combination w/ sticky elements)
+    background: url('data:image/gif;base64,R0lGODlhAQABAAAAACw=');
 }
 
 .c-fancy-gallery_sticky-area {
@@ -25,6 +29,10 @@
     opacity: calc(1 - var(--progress));
     z-index: 50;
     pointer-events: none;
+
+    @media (max-width: $to-small) {
+        display: none;
+    }
 }
 
 .c-fancy-gallery_sticky {
@@ -152,6 +160,10 @@
     @media (min-width: $from-small) {
         height: 200vh;
     }
+
+    @media (max-width: $to-small) {
+        height: 100vh;
+    }
 }
 
 .c-fancy-gallery_caption {
@@ -168,9 +180,11 @@
         &:before {
             content: '';
             position: absolute;
-            top: 0;left: 0;
-            width: 100%;height: 100%;
-            background-color: var(--color-bg);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(0deg, var(--color-bg) 40%, transparent 100%);
             opacity: 0.5;
         }
     }

@@ -21,6 +21,7 @@ export default class extends module {
 
     computeTl() {
         // Get rid of old timeline & reset everything
+        const progress = this.tl?.progress?.() ?? 0;
         this.tl?.kill?.();
         this.tl = null;
         gsap.set([...this.$items,this.$images], { clearProps: 'all' })
@@ -85,7 +86,7 @@ export default class extends module {
                 }, 0)
             }
 
-            this.tl.progress(0)
+            this.tl.progress(progress)
             this.tl.pause()
         })
     }
