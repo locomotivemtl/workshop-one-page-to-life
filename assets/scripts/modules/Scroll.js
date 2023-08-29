@@ -30,6 +30,7 @@ export default class extends module {
     }
 
     destroy() {
-        this.scroll.destroy();
+        super.destroy()
+        this.scroll?.destroy();
     }
 }
