@@ -1,0 +1,66 @@
+.c-splash-featured {
+    @include -margin-large-bottom;
+}
+
+.c-splash-featured_header {
+    display: grid;
+    gap: var(--grid-gutter);
+    @include -margin-large-bottom;
+
+    @media (min-width: $from-medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $to-medium) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.c-splash-featured_description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gutter);
+}
+
+.c-splash-featured_description_item {
+    &:last-child {
+        text-align: right;
+    }
+}
+
+// ==========================================================================
+// Marquee
+// ==========================================================================
+.c-splash-featured_marquee {
+    overflow: hidden;
+}
+
+.c-splash-featured_marquee_list {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+.c-splash-featured_marquee_item {
+    font-size: 17vw;
+    margin-right: 7vw;
+}
+
+// ==========================================================================
+// Columns text
+// ==========================================================================
+.c-splash-featured_columns-text {
+    @include -margin-large-top;
+}
+
+// ==========================================================================
+// Misc
+// ==========================================================================
+@keyframes marquee {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-50%,0,0);
+    }
+}
