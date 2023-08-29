@@ -1,0 +1,44 @@
+[
+    {
+        "img": {
+            "src": "/assets/images/products/coat.jpg",
+            "width": 1920,
+            "height": 1920
+        }
+    },
+    {
+        "img": {
+            "src": "/assets/images/products/suit.jpg",
+            "width": 1230,
+            "height": 1440
+        }
+    },
+    {
+        "img": {
+            "src": "/assets/images/products/shirt.jpg",
+            "width": 620,
+            "height": 725
+        }
+    },
+    {
+        "img": {
+            "src": "/assets/images/products/gloves.jpg",
+            "width": 620,
+            "height": 725
+        }
+    },
+    {
+        "img": {
+            "src": "/assets/images/products/hoodie.jpg",
+            "width": 620,
+            "height": 725
+        }
+    },
+    {
+        "img": {
+            "src": "/assets/images/products/jacket.jpg",
+            "width": 620,
+            "height": 725
+        }
+    }
+]
