@@ -39,6 +39,12 @@
     display: inline-flex;
     white-space: nowrap;
     animation: marquee 15s linear infinite;
+    animation-play-state: paused;
+
+    // Only animate when in view
+    .c-splash-featured.is-inview & {
+        animation-play-state: running;
+    }
 }
 
 .c-splash-featured_marquee_item {
