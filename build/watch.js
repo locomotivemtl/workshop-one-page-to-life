@@ -3,9 +3,9 @@ import buildEleventy from './tasks/eleventy.js'
 import compileScripts from './tasks/scripts.js'
 import compileStyles from './tasks/styles.js'
 
-buildEleventy({ production: false });
-compileScripts();
-compileStyles();
+await compileScripts();
+await compileStyles();
+await buildEleventy({ production: false });
 
 const server = browserSync.create();
 server.init({

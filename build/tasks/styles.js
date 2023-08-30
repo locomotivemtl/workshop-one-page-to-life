@@ -23,8 +23,11 @@ export default async function compileStyles() {
 
         let oldFileContent;
         if(file.checkFileChange) {
-            oldFileContent = fs.readFileSync(file.output,'utf-8')
-            // console.log(oldFileContent);
+            try {
+                oldFileContent = fs.readFileSync(file.output,'utf-8')
+            } catch (error) {
+                // console.error(error)
+            }
         }
 
         try {

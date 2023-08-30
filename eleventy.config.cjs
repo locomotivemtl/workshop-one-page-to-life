@@ -18,7 +18,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("critical_css", function() {
-        return fs.readFileSync('./www/assets/styles/critical.css', 'utf-8')
+        try {
+            return fs.readFileSync('./www/assets/styles/critical.css', 'utf-8')
+        } catch(error) {
+            return '';
+        }
     });
 
     // Configure options for Liquid template engine
