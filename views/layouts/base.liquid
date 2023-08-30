@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link id="main-css" rel="stylesheet" href="{{ '/assets/styles/main.css' | version }}" media="print" onload="this.media='all'; this.onload=null; this.isLoaded=true">
+
+        <style>
+            {% critical_css %}
+        </style>
     </head>
     <body>
         <header class="c-header">

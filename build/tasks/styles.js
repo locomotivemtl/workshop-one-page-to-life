@@ -1,24 +1,45 @@
 import message from '../helpers/message.js';
 import { writeFile } from 'node:fs/promises';
 import * as sass from 'sass';
+import fs from 'fs';
+import buildEleventy from '../tasks/eleventy.js'
 
-const inputFile = 'assets/styles/main.scss'
-const destFile = 'www/assets/styles/main.css'
+const files = [
+    {
+        input: 'assets/styles/main.scss',
+        output: 'www/assets/styles/main.css'
+    },
+    {
+        input: 'assets/styles/critical.scss',
+        output: 'www/assets/styles/critical.css',
+        checkFileChange: true
+    }
+]
 
 export default async function compileStyles() {
-    const timeLabel = `${destFile} compiled in`;
-    console.time(timeLabel);
+    for(let file of files) {
+        const timeLabel = `${file.output} compiled in`;
+        console.time(timeLabel);
 
-    try {
-        const result = await sass.compileAsync(inputFile);
-        await writeFile(destFile, result.css);
-
-        if (result.css) {
-            message(`Styles compiled`, 'success', timeLabel);
-        } else {
-            message(`${destFile} is empty`, 'notice', timeLabel);
+        let oldFileContent;
+        if(file.checkFileChange) {
+            oldFileContent = fs.readFileSync(file.output,'utf-8')
+            // console.log(oldFileContent);
         }
-    } catch(err) {
-        message(err, 'error', timeLabel);
+
+        try {
+            const result = await sass.compileAsync(file.input);
+            await writeFile(file.output, result.css);
+
+            file.checkFileChange && oldFileContent != result.css && await buildEleventy({ production: false });
+
+            if (result.css) {
+                message(`${file.input} compiled`, 'success', timeLabel);
+            } else {
+                message(`${file.output} is empty`, 'notice', timeLabel);
+            }
+        } catch(err) {
+            message(err, 'error', timeLabel);
+        }
     }
 }

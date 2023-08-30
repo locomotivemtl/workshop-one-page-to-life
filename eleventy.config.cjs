@@ -1,6 +1,7 @@
 // Import required modules
 const { Liquid } = require("liquidjs");
 const path = require('node:path');
+const fs = require('fs')
 
 // Export Eleventy configuration
 module.exports = function(eleventyConfig) {
@@ -14,6 +15,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('version', function(url) {
         const version = generateVersion();
         return `${url}?v=${version}`;
+    });
+
+    eleventyConfig.addShortcode("critical_css", function() {
+        return fs.readFileSync('./www/assets/styles/critical.css', 'utf-8')
     });
 
     // Configure options for Liquid template engine
