@@ -2,10 +2,11 @@
 // Marquee
 // ==========================================================================
 .c-footer_marquee {
-    @include -margin-large-bottom;
+    @include -margin-medium-bottom;
     overflow: hidden;
     position: relative;
-    z-index: 2;
+    z-index: -1;
+    opacity:  calc(min(0.7, var(--progress)) / 0.7);
 }
 
 .c-footer_marquee_list {
@@ -29,7 +30,7 @@
 // Logo
 // ==========================================================================
 .c-footer_logo {
-    transform: scaleY(calc(2 - var(--progress)));
+    transform: scaleY(calc(1.5 - var(--progress)*0.5));
     transform-origin: center bottom;
     overflow: visible;
 }
