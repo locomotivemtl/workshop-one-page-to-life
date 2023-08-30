@@ -1,0 +1,66 @@
+// ==========================================================================
+// Marquee
+// ==========================================================================
+.c-footer_marquee {
+    @include -margin-large-bottom;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.c-footer_marquee_list {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+    animation-play-state: paused;
+
+    // Only animate when in view
+    .c-footer.is-inview & {
+        animation-play-state: running;
+    }
+}
+
+.c-footer_marquee_item {
+    width: 20vw;
+    margin-right: var(--grid-gutter);
+}
+
+// ==========================================================================
+// Logo
+// ==========================================================================
+.c-footer_logo {
+    transform: scaleY(calc(2 - var(--progress)));
+    transform-origin: center bottom;
+    overflow: visible;
+}
+
+// ==========================================================================
+// Copy
+// ==========================================================================
+.c-footer_copy {
+    @include -container;
+    padding-top: var(--grid-gutter);
+    padding-bottom: var(--grid-gutter);
+    display: grid;
+    gap: 10px;
+
+    @media (min-width: $from-small) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: $to-small) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.c-footer_copy_item {
+    @media (min-width: $from-small) {
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    @media (max-width: $to-small) {
+        text-align: center;
+    }
+}
