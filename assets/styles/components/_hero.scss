@@ -31,6 +31,10 @@
     }
 }
 
+html.is-loaded .c-hero_visual-inner {
+    animation: slideDown 2s $easing;
+}
+
 .c-hero_logo {
     transform: translate3d(0,0,0) scaleY(calc(1 + var(--progress)));
     transform-origin: center bottom;

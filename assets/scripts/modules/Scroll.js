@@ -4,11 +4,14 @@ import LocomotiveScroll from 'locomotive-scroll'
 export default class extends module {
     constructor(m) {
         super(m);
+
+        this.onScrollBind = this.onScroll.bind(this)
     }
 
     init() {
         this.scroll = new LocomotiveScroll({
             modularInstance: this,
+            scrollCallback: this.onScrollBind,
         })
 
         // // Force scroll to top
@@ -16,6 +19,10 @@ export default class extends module {
         //     history.scrollRestoration = 'manual'
         //     window.scrollTo(0, 0)
         // }
+    }
+
+    onScroll({ scroll, limit, velocity, direction, progress }) {
+        window.locomotiveScrollData = { scroll, limit, velocity, direction, progress };
     }
 
     scrollTo(params) {

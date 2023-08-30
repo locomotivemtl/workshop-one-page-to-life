@@ -14,6 +14,18 @@
 @import "../../node_modules/normalize.css/normalize";
 @import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
+// Settings
+// ==========================================================================
+@import "settings/variables";
+
 // Elements
 // ==========================================================================
 @import "document";
+
+// Utilities
+// ==========================================================================
+@import "utilities/animations";
+
+// Components
+// ==========================================================================
+@import "components/preloader";

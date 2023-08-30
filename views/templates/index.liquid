@@ -5,7 +5,9 @@
         <h1 class="u-screen-reader-text">SWAG</h1>
         <figure class="c-hero_inner" aria-label="SWAG brand poster">
             <div class="c-hero_visual">
-                {% render 'snippets/image', src: '/assets/images/hero.jpg', width: 700, height: 940, attr: 'data-scroll data-scroll-speed="-0.1"' %}
+                <div class="c-hero_visual-inner">
+                    {% render 'snippets/image', src: '/assets/images/hero.jpg', width: 700, height: 940, attr: 'data-scroll data-scroll-speed="-0.1"' %}
+                </div>
             </div>
 
             <svg class="c-hero_logo" x="0px" y="0px" viewBox="0 0 1400 515" style="enable-background:new 0 0 1400 515;" xml:space="preserve">
@@ -161,6 +163,8 @@
                 </div>
             </div>
         </div>
+
+        <canvas class="c-splash-featured_canvas" data-module-splash-canvas data-splash-canvas-src="/assets/3d/redjacket.optimized.glb" data-scroll data-scroll-module-progress></canvas>
 
         {% if splash-featured.columns %}
             <div class="c-container">

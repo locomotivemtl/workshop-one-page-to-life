@@ -1,4 +1,5 @@
 .c-splash-featured {
+    position: relative;
     @include -margin-large-bottom;
 }
 
@@ -26,6 +27,20 @@
     &:last-child {
         text-align: right;
     }
+}
+
+// ==========================================================================
+// Canvas
+// ==========================================================================
+.c-splash-featured_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(chartreuse, 0.1);
+    z-index: 10;
+    pointer-events: none;
 }
 
 // ==========================================================================

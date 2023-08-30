@@ -18,7 +18,8 @@
         "gsap": "^3.12.2",
         "locomotive-scroll": "^5.0.0-beta.8",
         "modujs": "^1.4.2",
-        "normalize.css": "^8.0.1"
+        "normalize.css": "^8.0.1",
+        "three": "^0.155.0"
     },
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",
