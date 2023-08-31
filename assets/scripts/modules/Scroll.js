@@ -22,6 +22,7 @@ export default class extends module {
     }
 
     onScroll({ scroll, limit, velocity, direction, progress }) {
+        // Store our LS data on window to allow global access
         window.locomotiveScrollData = { scroll, limit, velocity, direction, progress };
     }
 

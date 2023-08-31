@@ -1,11 +1,30 @@
-<figure class="c-fancy-gallery" data-scroll data-scroll-css-progress data-scroll-module-progress data-scroll-offset="100%,100%" data-module-fancy-gallery>
+<figure
+    class="c-fancy-gallery"
+    data-module-fancy-gallery
+    data-scroll
+    data-scroll-css-progress
+    data-scroll-module-progress
+    data-scroll-offset="100%,100%"
+    >
     <div class="c-fancy-gallery_sticky-area">
-        <div class="c-fancy-gallery_sticky-overlay" data-scroll data-scroll-css-progress data-scroll-offset="100%,100%" data-scroll-ignore-fold></div>
+        <div
+            class="c-fancy-gallery_sticky-overlay"
+            data-scroll
+            data-scroll-css-progress
+            data-scroll-offset="100%,100%"
+            data-scroll-ignore-fold
+        ></div>
         <div class="c-fancy-gallery_sticky">
-            <div class="c-fancy-gallery_visuals" data-fancy-gallery="visuals-container">
+            <div class="c-fancy-gallery_grid" data-fancy-gallery="grid">
                 {% for visual in gallery %}
-                    <div class="c-fancy-gallery_item" data-fancy-gallery="item">
-                        {% render 'snippets/image', src: visual.src, width: visual.width, height: visual.height, focusPoint: visual.focusPoint, attr: 'data-fancy-gallery="image"' %}
+                    <div class="c-fancy-gallery_grid-item" data-fancy-gallery="grid-item">
+                        {%
+                            render 'snippets/image',
+                            src: visual.src,
+                            width: visual.width,
+                            height: visual.height,
+                            attr: 'data-fancy-gallery="image"'
+                        %}
                     </div>
                 {% endfor %}
             </div>
