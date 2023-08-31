@@ -5,8 +5,6 @@
     assign _width = width | default: nil
     assign _height = height | default: nil
 
-    assign _focus_point = focusPoint | default: false
-
     assign _src = src | default: nil
     assign _alt = alt | default: nil
     assign _attr = attr | default: nil
@@ -55,9 +53,6 @@
             {% if _is_lazy %}
                 loading="lazy"
                 onload="this.classList.add('is-loaded'); this.parentNode.classList.add('is-loaded');"
-            {% endif %}
-            {% if _focus_point %}
-                style="--focus-point-x: {{ _focus_point.x }}; --focus-point-y: {{ _focus_point.y }};"
             {% endif %}
         >
     </{{ _tag }}>

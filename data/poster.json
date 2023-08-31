@@ -20,7 +20,7 @@
         "src": "/assets/images/products/coat.jpg",
         "width": 1920,
         "height": 1920,
-        "focusPoint": {
+        "focus_point": {
             "x": "center",
             "y": "18%"
         }
