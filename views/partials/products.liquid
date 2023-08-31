@@ -1,0 +1,15 @@
+<section class="c-products || u-margin-large-bottom">
+    <h2 class="u-screen-reader-text">Products</h2>
+
+    <div class="c-products_highlight">
+        {% render 'snippets/product-tile', product: products[1] %}
+    </div>
+
+    <div data-scroll data-scroll-css-progress data-scroll-offset="-33%,66%">
+        <div class="c-products_list">
+            {% for product in products, offset: 2 %}
+                {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

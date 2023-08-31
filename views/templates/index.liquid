@@ -1,209 +1,44 @@
 {% layout 'base' %}
 
 {% block %}
-    <header class="c-hero" data-scroll data-scroll-css-progress>
-        <h1 class="u-screen-reader-text">SWAG</h1>
-        <figure class="c-hero_inner" aria-label="SWAG brand poster">
-            <div class="c-hero_visual">
-                <div class="c-hero_visual-inner">
-                    {% render 'snippets/image', src: '/assets/images/hero.jpg', width: 700, height: 940, attr: 'data-scroll data-scroll-speed="-0.1"' %}
-                </div>
-            </div>
+    {% render 'partials/hero' %}
 
-            <svg class="c-hero_logo" x="0px" y="0px" viewBox="0 0 1400 515" style="enable-background:new 0 0 1400 515;" xml:space="preserve">
-                <!-- S -->
-                <path d="M226.5,514H67.9c-37.5,0-67.4-29.9-67.4-67.4v-121c0-12.3,10-22.2,22.2-22.2h91.9c12.3,0,22.2,10,22.2,22.2v111.1h21.4 V313.3c0-16.9-14.6-31.4-32.2-31.4H61.8c-33.7,0-61.3-29.9-61.3-67.4V81.3c0-51.3,29.9-81.2,67.4-81.2h158.6 c37.5,0,67.4,29.9,67.4,67.4v94.2c0,12.3-10,22.2-22.2,22.2h-91.2c-12.3,0-22.2-10-22.2-22.2v-85h-21.4v96.5 c0,17.6,13.8,31.4,31.4,31.4h65.1c33.7,0,60.5,30.6,60.5,68.2v173.9C293.9,483.4,264,514,226.5,514z"/>
-                <!-- W -->
-                <path d="M385.1,514c-37.5,0-67.4-30.6-67.4-67.4V22.3c0-12.3,10-22.2,22.2-22.2h91.9C444,0.1,454,10,454,22.3v351.6h21.4V22.3 c0-12.3,10-22.2,22.2-22.2H585c12.3,0,22.2,10,22.2,22.2v351.6h21.4V22.3c0-12.3,10-22.2,22.2-22.2h91.9C755,0.1,765,10,765,22.3 v424.3c0,36.8-30.6,67.4-67.4,67.4h-78.1c-37.5,0-67.4-30.6-67.4-67.4v-37.5h-21.4v37.5c0,36.8-29.9,67.4-67.4,67.4H385.1z"/>
-                <!-- A -->
-                <path d="M788.2,491.8V67.5c0-37.5,30.6-67.4,67.4-67.4h159.3c36.8,0,67.4,29.9,67.4,67.4v424.3c0,12.3-10.7,22.2-23,22.2h-91.1 c-12.3,0-22.2-10-22.2-22.2V295.7h-21.4v196.1c0,12.3-10,22.2-22.2,22.2h-91.2C798.1,514,788.2,504.1,788.2,491.8z M946,218.4V76.7 h-21.4v141.7H946z"/>
-                <!-- G -->
-                <path d="M1285.3,416c-12.2,0-22.2-10-22.2-23v-87.3c0-12.3,10-22.2,22.2-22.2h91.2c12.3,0,23,10,23,22.2v140.9 c0,36.8-30.6,67.4-67.4,67.4h-159.3c-36.8,0-67.4-30.6-67.4-67.4V67.5c0-37.5,30.6-67.4,67.4-67.4h159.3c36.8,0,67.4,29.9,67.4,67.4 v172.3c0,12.3-10.7,22.2-23,22.2h-91.2c-12.2,0-22.2-10-22.2-22.2V76.7h-21.4v328.6c0,17.6,13.8,31.4,31.4,31.4h49V416H1285.3z"/>
-            </svg>
-        </figure>
-    </header>
+    {% capture head %}
+        <h2>About</h2>
+    {% endcapture %}
+    {% capture content %}
+        <p>Step into a world where African culture takes center stage, where vibrant colors intertwine with graceful minimalism. SWAG is not just a fashion brand;</p>
+        <p>It's a fusion of heritage and style, a celebration of African roots with a contemporary twist.</p>
+    {% endcapture %}
+    {% render 'snippets/editorial', head: head, content: content, modifiers: '-about', classes: 'u-margin-large-bottom' %}
 
-    <section class="c-editorial -about || u-margin-large-bottom">
-        <div class="c-editorial_head">
-            <h2>About</h2>
-        </div>
-        <div class="c-editorial_content">
-            <p>Step into a world where African culture takes center stage, where vibrant colors intertwine with graceful minimalism. SWAG is not just a fashion brand;</p>
-            <p>It's a fusion of heritage and style, a celebration of African roots with a contemporary twist.</p>
-        </div>
-    </section>
+    {% render 'partials/fancy-gallery', gallery: gallery %}
 
-    <figure class="c-fancy-gallery" data-scroll data-scroll-css-progress data-scroll-module-progress data-scroll-offset="100%,100%" data-module-fancy-gallery>
-        <div class="c-fancy-gallery_sticky-area">
-            <div class="c-fancy-gallery_sticky-overlay" data-scroll data-scroll-css-progress data-scroll-offset="100%,100%" data-scroll-ignore-fold></div>
-            <div class="c-fancy-gallery_sticky">
-                <div class="c-fancy-gallery_visuals" data-fancy-gallery="visuals-container">
-                    {% for visual in gallery %}
-                        <div class="c-fancy-gallery_item" data-fancy-gallery="item">
-                            {% render 'snippets/image', src: visual.src, width: visual.width, height: visual.height, focusPoint: visual.focusPoint, attr: 'data-fancy-gallery="image"' %}
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    {% render 'partials/poster', poster: poster %}
 
-        <div class="c-fancy-gallery_spacer"></div>
+    {% render 'partials/products', products: products %}
 
-        <figcaption class="c-fancy-gallery_caption" data-scroll data-scroll-css-progress data-scroll-module-progress data-module-fancy-gallery-caption data-scroll-offset="33%,100%">
-            {% assign splitCaption = 'Where African Heritage Meets Minimalist Chic' | split: ' ' %}
-            {% for word in splitCaption %}
-                <span class="c-fancy-gallery_word">
-                    <span class="c-fancy-gallery_word-inner" data-fancy-gallery-caption="word">{{word}}</span>
-                </span>
-            {% endfor %}
-        </figcaption>
-    </figure>
+    {% render 'partials/splash-featured', splash-featured: splash-featured %}
 
-    <section class="c-poster" data-scroll data-scroll-css-progress>
-        <div class="c-poster_inner">
-            {% if poster.title %}
-                <h2 class="u-screen-reader-text">{{ poster.title }}</h2>
-            {% endif %}
-
-            {% if poster.description %}
-                <div class="c-wysiwyg || c-poster_description">{{ poster.description }}</div>
-            {% endif %}
-
-            {% if poster.columns %}
-                <div class="c-poster_columns-text">
-                    <div class="c-columns-text">
-                        {% for column in poster.columns %}
-                            <div class="c-columns-text_item">
-                                {% if column.content %}
-                                    <div class="c-wysiwyg || c-columns-text_item_content">{{ column.content }}</div>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endif %}
-
-            {% if poster.foot %}
-                <div class="c-poster_foot">
-                    <span>{{ poster.foot }}</span>
-                </div>
-            {% endif %}
-        </div>
-
-        {% if poster.img %}
-            {% comment %} Styles for a custom animation based on the focus point {% endcomment %}
-            {% capture transform_origin_focus_point %}style="--focus-point-x: {{ poster.img.focusPoint.x }}; --focus-point-y: {{ poster.img.focusPoint.y }};"{% endcapture %}
-            {% render 'snippets/image',
-                classes: 'c-poster_image',
-                modifiers: '-cover',
-                src: poster.img.src,
-                width: poster.img.width,
-                height: poster.img.height,
-                focusPoint: poster.img.focusPoint,
-                attr: transform_origin_focus_point
+    {% capture head %}
+        <h2>FAQ</h2>
+        <p>Whether you have inquiries about shipping, returns, sizing, care instructions, or any other topic, we have curated a list of frequently asked questions to assist you. We believe that transparency and clear communication are essential in building a strong relationship with our valued customers like you.</p>
+    {% endcapture %}
+    {% capture content %}
+        {% for faq_item in faq.items %}
+            {% render 'snippets/accordion',
+                title: faq_item.title,
+                content: faq_item.content
             %}
-        {% endif %}
-    </section>
+        {% endfor %}
+    {% endcapture %}
+    {% render 'snippets/editorial', head: head, content: content, modifiers: '-faq', classes: 'u-margin-huge-bottom' %}
 
-    <section class="c-products || u-margin-large-bottom">
-        <h2 class="u-screen-reader-text">Products</h2>
-
-        <div class="c-products_highlight">
-            {% render 'snippets/product-tile', product: products[1] %}
-        </div>
-
-        <div data-scroll data-scroll-css-progress data-scroll-offset="-33%,66%">
-            <div class="c-products_list">
-                {% for product in products, offset: 2 %}
-                    {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <section class="c-splash-featured" data-scroll data-scroll-repeat>
-        <div class="c-container">
-            <div class="c-splash-featured_header">
-                {% if splash-featured.title %}
-                    <h2 class="c-heading || c-splash-featured_title">{{ splash-featured.title }}</h2>
-                {% endif %}
-
-                {% if splash-featured.description %}
-                    <div class="c-splash-featured_description">
-                        {% for item in splash-featured.description %}
-                            <div class="c-splash-featured_description_item">
-                                <span>
-                                    {{ item.content }}
-                                </span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="c-splash-featured_marquee">
-            <div class="c-splash-featured_marquee_inner">
-                <div class="c-splash-featured_marquee_list">
-                    {% for item in splash-featured.marquee %}
-                        <div class="c-splash-featured_marquee_item">
-                            <span>
-                                {{ item.content }}
-                            </span>
-                        </div>
-                    {% endfor %}
-
-                    {% for item in splash-featured.marquee %}
-                        <div class="c-splash-featured_marquee_item">
-                            <span>
-                                {{ item.content }}
-                            </span>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <canvas class="c-splash-featured_canvas" data-module-splash-canvas data-splash-canvas-src="/assets/3d/redjacket.optimized.glb" data-scroll data-scroll-module-progress></canvas>
-
-        {% if splash-featured.columns %}
-            <div class="c-container">
-                <div class="c-splash-featured_columns-text">
-                    <div class="c-columns-text">
-                        {% for column in splash-featured.columns %}
-                            <div class="c-columns-text_item">
-                                {% if column.content %}
-                                    <div class="c-wysiwyg || c-columns-text_item_content">{{ column.content }}</div>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        {% endif %}
-    </section>
-
-    <section class="c-editorial -faq || u-margin-huge-bottom">
-        <div class="c-editorial_head">
-            <h2>FAQ</h2>
-            <p>Whether you have inquiries about shipping, returns, sizing, care instructions, or any other topic, we have curated a list of frequently asked questions to assist you. We believe that transparency and clear communication are essential in building a strong relationship with our valued customers like you.</p>
-        </div>
-        <div class="c-editorial_content">
-            {% for faq_item in faq.items %}
-                {% render 'snippets/accordion',
-                    title: faq_item.title,
-                    content: faq_item.content
-                %}
-            {% endfor %}
-        </div>
-    </section>
-
-    <section class="c-editorial -manifesto || u-margin-huge-bottom">
-        <div class="c-editorial_head">
-            <h2>Rooted in Culture, Blossoming with SWAG</h2>
-        </div>
-        <div class="c-editorial_content">
-            <p>SWAG is more than just a fashion brand; it's a celebration of Africa's vibrant legacy, a testament to the fusion of traditional and contemporary aesthetics. Join us on a journey of self-expression and cultural appreciation, where African culture shines with floral elegance and minimalist flair. Embrace the essence of SWAG, and let your style reflect the beauty and richness of African heritage.</p>
-        </div>
-    </section>
+    {% capture head %}
+        <h2>Rooted in Culture, Blossoming with SWAG</h2>
+    {% endcapture %}
+    {% capture content %}
+        <p>SWAG is more than just a fashion brand; it's a celebration of Africa's vibrant legacy, a testament to the fusion of traditional and contemporary aesthetics. Join us on a journey of self-expression and cultural appreciation, where African culture shines with floral elegance and minimalist flair. Embrace the essence of SWAG, and let your style reflect the beauty and richness of African heritage.</p>
+    {% endcapture %}
+    {% render 'snippets/editorial', head: head, content: content, modifiers: '-manifesto', classes: 'u-margin-huge-bottom' %}
 {% endblock %}

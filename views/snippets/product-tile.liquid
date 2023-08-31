@@ -1,12 +1,13 @@
-{% assign _attr = attr | default: null %}
-{% assign _classes = classes | default: null %}
-{% assign _modifiers = modifiers | default: null %}
 {% liquid
-    if _classes != null
+    assign _attr = attr | default: nil
+    assign _classes = classes | default: nil
+    assign _modifiers = modifiers | default: nil
+
+    if _classes != nil
         assign _classes = ' ' | append: _classes
     endif
 
-    if _modifiers != null
+    if _modifiers != nil
         assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
     endif
 %}
