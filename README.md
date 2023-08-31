@@ -61,6 +61,15 @@ This workshop is brought to you by Locomotive Inc.
 
 This project is licensed under the [ISC License](LICENSE).
 
+## Credits
+### 3D Jacket Model 
+[Sketchfab](https://sketchfab.com/3d-models/jacket-c3d2b183d3534979ad43493b4634c034) model by [ypushkar30](https://sketchfab.com/ypushkar30) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. 
+The original model has been slightly altered to better fit this project (changed color from black to red).
+### Typography
+[Neue Montreal](https://pangrampangram.com/products/neue-montreal) by [Pangram Pangram](https://pangrampangram.com/products/neue-montreal).
+The font file on this repository is only used for artistic & educational purposes in the context of the workshop associated with this repository. You are not allowed to download it from here to use it for any other purpose. For more informations, check the
+[license](https://pangrampangram.com/pages/faq#font-licensing).
+
 ## Additional Information
 
 For more details, feel free to visit the [Workshop Website](https://one-page-to-life.workshops.locomotive.ca/).

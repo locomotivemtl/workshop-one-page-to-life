@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>SWAG - not just a fashion brand</title>
-        <meta name="description" content="">
+        <title>{{ site.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:image" content="/assets/images/og.jpg" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇭🇷</text></svg>">
@@ -56,13 +55,11 @@
             </div>
 
             <div class="c-footer_copy">
-                <div class="c-footer_copy_item">
-                    <span>Typography, <a href="https://pangrampangram.com/products/neue-montreal">PP® Neue Montreal</a></span>
-                </div>
-
-                <div class="c-footer_copy_item">
-                    <span>Website by <a href="https://locomotive.ca">Locomotive</a> & You</span>
-                </div>
+                {% for copyright in site.copyrights %}
+                    <div class="c-footer_copy_item">
+                        {{copyright}}
+                    </div>
+                {% endfor %}
             </div>
         </footer>
 

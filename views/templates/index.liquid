@@ -1,16 +1,18 @@
 {% layout 'base' %}
 
 {% block %}
-    {% render 'partials/hero' %}
+    {% render 'partials/hero', site: site %}
 
-    {% capture head %}
-        <h2>About</h2>
+    {% capture about_head %}
+        <h2>{{about.title}}</h2>
     {% endcapture %}
-    {% capture content %}
-        <p>Step into a world where African culture takes center stage, where vibrant colors intertwine with graceful minimalism. SWAG is not just a fashion brand;</p>
-        <p>It's a fusion of heritage and style, a celebration of African roots with a contemporary twist.</p>
-    {% endcapture %}
-    {% render 'snippets/editorial', head: head, content: content, modifiers: '-about', classes: 'u-margin-large-bottom' %}
+    {%
+        render 'snippets/editorial',
+        head: about_head,
+        content: about.content,
+        modifiers: '-about',
+        classes: 'u-margin-large-bottom'
+    %}
 
     {% render 'partials/fancy-gallery', gallery: gallery %}
 
@@ -21,8 +23,8 @@
     {% render 'partials/splash-featured', splash-featured: splash-featured %}
 
     {% capture head %}
-        <h2>FAQ</h2>
-        <p>Whether you have inquiries about shipping, returns, sizing, care instructions, or any other topic, we have curated a list of frequently asked questions to assist you. We believe that transparency and clear communication are essential in building a strong relationship with our valued customers like you.</p>
+        <h2>{{faq.title}}</h2>
+        <p>{{faq.description}}</p>
     {% endcapture %}
     {% capture content %}
         {% for faq_item in faq.items %}
@@ -35,10 +37,10 @@
     {% render 'snippets/editorial', head: head, content: content, modifiers: '-faq', classes: 'u-margin-huge-bottom' %}
 
     {% capture head %}
-        <h2>Rooted in Culture, Blossoming with SWAG</h2>
+        <h2>{{manifesto.title}}</h2>
     {% endcapture %}
     {% capture content %}
-        <p>SWAG is more than just a fashion brand; it's a celebration of Africa's vibrant legacy, a testament to the fusion of traditional and contemporary aesthetics. Join us on a journey of self-expression and cultural appreciation, where African culture shines with floral elegance and minimalist flair. Embrace the essence of SWAG, and let your style reflect the beauty and richness of African heritage.</p>
+        <p>{{manifesto.description}}</p>
     {% endcapture %}
     {% render 'snippets/editorial', head: head, content: content, modifiers: '-manifesto', classes: 'u-margin-huge-bottom' %}
 {% endblock %}

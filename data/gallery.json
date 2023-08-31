@@ -1,58 +1,45 @@
-[
-    {
-        "src": "/assets/images/gallery/mosaic-tile-main.jpg",
-        "width": 470,
-        "height": 640
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-1.jpg",
-        "width": 470,
-        "height": 640
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-2.jpg",
-        "width": 470,
-        "height": 640
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-3.jpg",
-        "width": 470,
-        "height": 640,
-        "focusPoint": {
-            "x": "center",
-            "y": "15%"
+{
+    "caption": "Where African Heritage Meets Minimalist Chic",
+    "images": [
+        {
+            "src": "/assets/images/gallery/mosaic-tile-main.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-1.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-2.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-3.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-4.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-5.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-6.jpg",
+            "width": 470,
+            "height": 640
+        },
+        {
+            "src": "/assets/images/gallery/mosaic-tile-7.jpg",
+            "width": 470,
+            "height": 640
         }
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-4.jpg",
-        "width": 470,
-        "height": 640,
-        "focusPoint": {
-            "x": "center",
-            "y": "0%"
-        }
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-5.jpg",
-        "width": 470,
-        "height": 640
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-6.jpg",
-        "width": 470,
-        "height": 640,
-        "focusPoint": {
-            "x": "center",
-            "y": "0%"
-        }
-    },
-    {
-        "src": "/assets/images/gallery/mosaic-tile-7.jpg",
-        "width": 470,
-        "height": 640,
-        "focusPoint": {
-            "x": "center",
-            "y": "0%"
-        }
-    }
-]
+    ]
+}

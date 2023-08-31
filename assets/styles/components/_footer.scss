@@ -43,10 +43,10 @@
     padding-top: var(--grid-gutter);
     padding-bottom: var(--grid-gutter);
     display: grid;
-    gap: 10px;
+    gap: var(--grid-gutter);
 
     @media (min-width: $from-small) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     @media (max-width: $to-small) {
