@@ -13,22 +13,26 @@
 %}
 
 <article class="c-product-tile {{ _classes }}" {{_attr}}>
-    <div class="c-product-tile_inner">
-        {% render 'snippets/image', classes: 'c-product-tile_image', src: product.img.src, width: product.img.width, height: product.img.height %}
+    {%
+        render 'snippets/image',
+        classes: 'c-product-tile_image',
+        src: product.img.src,
+        width: product.img.width,
+        height: product.img.height
+    %}
 
-        <div class="c-product-tile_content">
-            <h3 class="c-product-tile_title">{{ product.title }}</h3>
-            {% for tag in product.tags %}
-                <span class="c-product-tile_tag">{{ tag }}</span>&nbsp;
-            {% endfor %}
+    <div class="c-product-tile_content">
+        <h3 class="c-product-tile_title">{{ product.title }}</h3>
+        {% for tag in product.tags %}
+            <span class="c-product-tile_tag">{{ tag }}</span>&nbsp;
+        {% endfor %}
 
-            <span class="c-product-tile_price">{{ product.price }}</span>
+        <span class="c-product-tile_price">{{ product.price }}</span>
 
-            <span class="c-product-tile_cta" aria-hidden="true"></span>
-        </div>
-
-        <a href="#" class="c-product-tile_link">
-            <span class="u-screen-reader-text">Details</span>
-        </a>
+        <span class="c-product-tile_cta" aria-hidden="true"></span>
     </div>
+
+    <a href="#" class="c-product-tile_link">
+        <span class="u-screen-reader-text">Details</span>
+    </a>
 </article>

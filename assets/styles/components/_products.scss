@@ -30,3 +30,31 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.c-products_item {
+    transition: transform .125s $easing;
+
+    @media (min-width: $from-medium) {
+        @for $i from 0 through 4 {
+            &:nth-child(4n+#{$i}) {
+                transform: translate3d(0,calc((33% * #{$i - 2 - 0.5} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+
+    @media (min-width: $from-small) and (max-width: $to-medium) {
+        @for $i from 0 through 3 {
+            &:nth-child(3n+#{$i}) {
+                transform: translate3d(0,calc((33% * #{$i - 1.5} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+
+    @media (min-width: $from-tiny) and (max-width: $to-small) {
+        @for $i from 0 through 2 {
+            &:nth-child(2n+#{$i}) {
+                transform: translate3d(0,calc((33% * #{$i - 1} * (1 - var(--progress)))),0);
+            }
+        }
+    }
+}

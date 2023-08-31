@@ -5,11 +5,9 @@
         {% render 'snippets/product-tile', product: products.items[0] %}
     </div>
 
-    <div data-scroll data-scroll-css-progress data-scroll-offset="-33%,66%">
-        <div class="c-products_list">
-            {% for product in products.items, offset: 1 %}
-                {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}
-            {% endfor %}
-        </div>
+    <div class="c-products_list" data-scroll data-scroll-css-progress data-scroll-offset="-33%,66%">
+        {% for product in products.items, offset: 1 %}
+            {% render 'snippets/product-tile', classes: 'c-products_item || u-margin-medium-bottom', product: product %}
+        {% endfor %}
     </div>
 </section>
