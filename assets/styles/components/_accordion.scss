@@ -7,21 +7,22 @@
     padding: .75em 0;
     list-style: none;
 
-    &:after {
+    &:before {
         content: 'View';
         display: inline-block;
         float: right;
         opacity: .5;
+        margin-left: 1em;
     }
 
     .c-accordion[open] & {
-        &:after {
+        &:before {
             content: 'Close'
         }
     }
 
     .c-accordion:hover &{
-        &:after {
+        &:before {
             opacity: 1;
         }
     }

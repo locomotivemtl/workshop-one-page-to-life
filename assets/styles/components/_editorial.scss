@@ -12,10 +12,13 @@
 .c-editorial_head {
     width: grid-space(math.div(6,12));
 
-
     .c-editorial.-faq & {
-        @media (min-width: $from-small) {
+        @media (min-width: $from-medium) {
             padding-right: grid-space(math.div(3,12), 1);
+        }
+
+        @media (max-width: $to-small) {
+            width: 100%;
         }
     }
 
