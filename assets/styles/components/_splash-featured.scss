@@ -6,6 +6,7 @@
 .c-splash-featured_header {
     display: grid;
     gap: var(--grid-gutter);
+    @include -container;
     @include -margin-large-bottom;
 
     @media (min-width: $from-medium) {
@@ -38,7 +39,6 @@
     left: 0;
     width: 100% !important;
     height: 100% !important;
-    // background-color: rgba(chartreuse, 0.1);
     z-index: 10;
     pointer-events: none;
 }
@@ -72,4 +72,5 @@
 // ==========================================================================
 .c-splash-featured_columns-text {
     @include -margin-large-top;
+    @include -container;
 }
