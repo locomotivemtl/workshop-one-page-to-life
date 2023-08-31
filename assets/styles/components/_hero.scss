@@ -1,40 +1,52 @@
 .c-hero {
-
-}
-
-.c-hero_inner {
     display: flex;
-    padding: var(--grid-margin);
-    padding-top: 25vw;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 100vh;
+    min-height: vh(100);
+    padding: var(--grid-margin);
+    padding-top: vw(25);
 }
 
-.c-hero_visual {
+// VISUAL
+// ==========================================================================
+.c-hero_image-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 10;
 
-    @media (min-width: $from-small) {
-        width: 100% * math.div(3,12);
+    // Desktop-ish
+    // Landscape
+    @media (min-width: $from-small) and (min-aspect-ratio: 1 / 1 ) {
+        width: grid-space(math.div(3,12));
+    }
+    // Portrait
+    @media (min-width: $from-small) and (max-aspect-ratio: 1 / 1) {
+        width: 40vw;
     }
 
+    // Mobile-ish
+    // Landscape
     @media (max-width: $to-small) and (min-aspect-ratio: 1 / 1) {
-        width: calc(700/940 * 75vmin);
+        width: calc(700/940 * 75vh); // Translates to: we want height to be 75vh
     }
 
+    // Portrait
     @media (max-width: $to-small) and (max-aspect-ratio: 1 / 1) {
-        width: calc(940/700 * 50vmin);
+        width: 50vw;
+        transform: translate(-50%,-66%);
     }
 }
 
-html.is-loaded .c-hero_visual-inner {
-    animation: slideDown 2s $easing;
+.c-hero_image {
+    html.is-loaded & {
+        animation: slideDown 2s $easing;
+    }
 }
 
+// LOGO
+// ==========================================================================
 .c-hero_logo {
     transform: translate3d(0,0,0) scaleY(calc(1 + var(--progress)));
     transform-origin: center bottom;
