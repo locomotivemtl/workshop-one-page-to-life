@@ -22,11 +22,11 @@
 
     {% render 'partials/splash-featured', splash-featured: splash-featured %}
 
-    {% capture head %}
+    {% capture faq_head %}
         <h2>{{faq.title}}</h2>
         <p>{{faq.description}}</p>
     {% endcapture %}
-    {% capture content %}
+    {% capture faq_content %}
         {% for faq_item in faq.items %}
             {% render 'snippets/accordion',
                 title: faq_item.title,
@@ -34,13 +34,13 @@
             %}
         {% endfor %}
     {% endcapture %}
-    {% render 'snippets/editorial', head: head, content: content, modifiers: '-faq', classes: 'u-margin-huge-bottom' %}
+    {% render 'snippets/editorial', head: faq_head, content: faq_content, modifiers: '-faq', classes: 'u-margin-huge-bottom' %}
 
-    {% capture head %}
+    {% capture manifesto_head %}
         <h2>{{manifesto.title}}</h2>
     {% endcapture %}
-    {% capture content %}
+    {% capture manifesto_content %}
         <p>{{manifesto.description}}</p>
     {% endcapture %}
-    {% render 'snippets/editorial', head: head, content: content, modifiers: '-manifesto', classes: 'u-margin-huge-bottom' %}
+    {% render 'snippets/editorial', head: manifesto_head, content: manifesto_content, modifiers: '-manifesto', classes: 'u-margin-huge-bottom' %}
 {% endblock %}

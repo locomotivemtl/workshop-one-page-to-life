@@ -6,19 +6,15 @@ import { nestedRAF } from './utils/html'
 import { CUSTOM_EVENT, CSS_CLASS } from './config'
 import { gridHelper } from './utils/grid-helper'
 
+// Instantiate the app w/ modular
+// This is the entry gate of our whole JS modules system
+// It is yet to be properly launched by a call to `app.init()` but we'll wait for the load event for that
 const app = new modular({
     modules: modules,
 });
 
 // Events handling
 // ==========================================================================
-
-// Bind window resize event with default vars
-const resizeEndEvent = new CustomEvent(CUSTOM_EVENT.RESIZE_END)
-window.addEventListener('resize', debounce(() => {
-    $html.style.setProperty('--vw', `${document.documentElement.clientWidth * 0.01}px`)
-    window.dispatchEvent(resizeEndEvent)
-}, 200))
 
 // Listen for page load
 window.addEventListener('load', (event) => {
@@ -37,6 +33,13 @@ window.addEventListener('load', (event) => {
     }
 });
 
+// Bind window resize event with default vars
+const resizeEndEvent = new CustomEvent(CUSTOM_EVENT.RESIZE_END)
+window.addEventListener('resize', debounce(() => {
+    $html.style.setProperty('--vw', `${document.documentElement.clientWidth * 0.01}px`)
+    window.dispatchEvent(resizeEndEvent)
+}, 200))
+
 // Init functions
 // ==========================================================================
 function postInit() {
@@ -48,11 +51,13 @@ function postInit() {
 function init() {
     gridHelper?.();
 
+    // Init our app, will call `.init()` on all modules currently on page
     app.init(app);
 
+    // If we have a promise for a the 3dmodel, wait for it to complete before calling postInit to prevent jittering (caused by the 3d model instanciation) on our intro
     if(window.model3dLoadPromise) {
         window.model3dLoadPromise.then(() => {
-            nestedRAF(() => {
+            nestedRAF(() => { // Along with the promise, we also wait for 7 frames (arbitrary) to let the browser a chance to get back to reality after the hard 3d model instanciation process. Again, a small hack to prevent jittering and keep our intro smooth
                 postInit();
             }, 7);
         })
