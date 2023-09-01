@@ -38,6 +38,7 @@ export default class extends module {
     }
 
     destroy() {
+        super.destroy();
         this.tl?.kill?.();
     }
 }

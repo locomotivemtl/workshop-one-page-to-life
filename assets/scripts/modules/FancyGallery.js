@@ -108,6 +108,7 @@ export default class extends module {
     }
 
     destroy() {
+        super.destroy();
         window.removeEventListener(CUSTOM_EVENT.RESIZE_END, this.computeTl);
         this.tl?.kill?.();
     }

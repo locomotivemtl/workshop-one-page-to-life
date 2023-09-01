@@ -180,6 +180,7 @@ export default class extends Module {
     }
 
     destroy() {
+        super.destroy();
         this.tl?.kill?.();
         window.removeEventListener(CUSTOM_EVENT.RESIZE_END, this.resize);
         window.cancelAnimationFrame(this.raf)

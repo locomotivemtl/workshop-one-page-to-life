@@ -8,4 +8,8 @@ export default class extends module {
     init() {
         // do your magic here
     }
+
+    destroy() {
+        super.destroy()
+    }
 }
