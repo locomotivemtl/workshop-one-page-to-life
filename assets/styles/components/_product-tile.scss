@@ -3,9 +3,11 @@
 }
 
 .c-product-tile_image {
-    .c-products_highlight & {
-        margin-left: calc(var(--container-margin) * -1);
-        width: calc(100% + var(--container-margin) * 2);
+    @media (max-width: $to-small) {
+        .c-products_highlight & {
+            margin-left: calc(var(--container-margin) * -1);
+            width: calc(100% + var(--container-margin) * 2);
+        }
     }
 
     .c-product-tile:hover &,
