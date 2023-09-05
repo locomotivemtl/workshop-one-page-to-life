@@ -1,25 +1,22 @@
-{% liquid
-    assign _attr = attr | default: nil
-    assign _classes = classes | default: nil
-    assign _modifiers = modifiers | default: nil
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+{% set _attr = attr | default(null) %}
 
-    if _classes != nil
-        assign _classes = ' ' | append: _classes
-    endif
+{% if _classes != null %}
+    {% set _classes = ' ' ~ _classes %}
+{% endif %}
 
-    if _modifiers != nil
-        assign _classes = ' ' | append: _modifiers | append: ' ' | append: _classes
-    endif
-%}
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
+{% endif %}
 
 <article class="c-product-tile {{ _classes }}" {{ _attr }}>
-    {%
-        render 'snippets/image',
+    {% include "@snippets/image.twig" with {
         classes: 'c-product-tile_image',
         src: product.img.src,
         width: product.img.width,
         height: product.img.height
-    %}
+    } only %}
 
     <div class="c-product-tile_content">
         <h3 class="c-product-tile_title">{{ product.title }}</h3>

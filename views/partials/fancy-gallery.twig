@@ -18,13 +18,12 @@
             <div class="c-fancy-gallery_grid" data-fancy-gallery="grid">
                 {% for image in gallery.images %}
                     <div class="c-fancy-gallery_grid-item" data-fancy-gallery="grid-item">
-                        {%
-                            render 'snippets/image',
+                        {% include "@snippets/image.twig" with {
                             src: image.src,
                             width: image.width,
                             height: image.height,
                             attr: 'data-fancy-gallery="image"'
-                        %}
+                        } only %}
                     </div>
                 {% endfor %}
             </div>
@@ -34,8 +33,7 @@
     <div class="c-fancy-gallery_spacer"></div>
 
     <figcaption class="c-fancy-gallery_caption" data-scroll data-scroll-css-progress data-scroll-module-progress data-module-fancy-gallery-caption data-scroll-offset="33%,100%">
-        {% assign splitCaption = gallery.caption | split: ' ' %}
-        {% for word in splitCaption %}
+        {% for word in gallery.caption | split(' ') %}
             <span class="c-fancy-gallery_word">
                 <span class="c-fancy-gallery_word-inner" data-fancy-gallery-caption="word">{{word}}</span>
             </span>

@@ -4,20 +4,18 @@
     <figure class="c-hero" aria-label="{{ site.hero_label }}" data-scroll data-scroll-css-progress>
         <div class="c-hero_image-wrapper">
             <div class="c-hero_image">
-                {%
-                    render 'snippets/image',
+                {% include "@snippets/image.twig" with {
                     src: '/assets/images/hero.jpg',
                     width: 700,
                     height: 940,
                     is_lazy: false,
                     attr: 'data-scroll data-scroll-speed="-0.1"'
-                %}
+                } only %}
             </div>
         </div>
 
-        {%
-            render 'snippets/logo',
+        {% include "@snippets/logo.twig" with {
             classes: 'c-hero_logo'
-        %}
+        } only %}
     </figure>
 </header>

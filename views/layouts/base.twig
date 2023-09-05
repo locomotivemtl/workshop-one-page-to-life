@@ -11,7 +11,7 @@
         <link id="main-css" rel="stylesheet" href="{{ '/assets/styles/main.css' | version }}" media="print" onload="this.media='all'; this.onload=null; this.isLoaded=true">
 
         <style>
-            {% critical_css %}
+            {{ critical_css() }}
         </style>
     </head>
     <body>
@@ -22,11 +22,11 @@
             <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
                 Shop <span aria-hidden="true">↗</span>
             </a>
-            {% comment %} <nav class="c-menu"></nav> {% endcomment %}
+            {# <nav class="c-menu"></nav> #}
         </header>
 
         <main data-module-scroll="main">
-            {% block %}{% endblock %}
+            {% block content %}{% endblock %}
         </main>
 
         <footer
@@ -42,7 +42,11 @@
                     <div class="c-footer_marquee_list">
                         {% for item in marquee %}
                             <div class="c-footer_marquee_item">
-                                {% render 'snippets/image', src: item.img.src, width: item.img.width, height: item.img.height %}
+                                {% include "@snippets/image.twig" with {
+                                    src: item.img.src,
+                                    width: item.img.width,
+                                    height: item.img.height
+                                } only %}
                             </div>
                         {% endfor %}
                     </div>
@@ -51,7 +55,9 @@
 
             <div class="c-container">
                 <div class="c-footer_inner">
-                    {% render 'snippets/logo', classes: 'c-footer_logo' %}
+                    {% include "@snippets/logo.twig" with {
+                        classes: 'c-footer_logo'
+                    } only %}
                 </div>
             </div>
 

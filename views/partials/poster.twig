@@ -30,15 +30,14 @@
     </div>
 
     {% if poster.img %}
-        {% comment %} Styles for a custom animation based on the focus point {% endcomment %}
-        {% capture transform_origin_focus_point %}style="--focus-point-x: {{ poster.img.focus_point.x }}; --focus-point-y: {{ poster.img.focus_point.y }};"{% endcapture %}
-        {% render 'snippets/image',
+        {# Styles for a custom animation based on the focus point #}
+        {% include "@snippets/image.twig" with {
             classes: 'c-poster_image',
             modifiers: '-cover',
             src: poster.img.src,
             width: poster.img.width,
             height: poster.img.height,
-            attr: transform_origin_focus_point
-        %}
+            attr: 'style="--focus-point-x: ' ~ poster.img.focus_point.x ~ '; --focus-point-y: ' ~ poster.img.focus_point.y ~ ';"'
+        } only %}
     {% endif %}
 </section>

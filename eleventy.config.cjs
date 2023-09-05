@@ -1,7 +1,7 @@
 // Import required modules
-const { Liquid } = require("liquidjs");
-const path = require('node:path');
+const twig = require("twig");
 const fs = require('fs')
+const eleventyPluginTwig = require("@factorial/eleventy-plugin-twig");
 
 // Export Eleventy configuration
 module.exports = function(eleventyConfig) {
@@ -11,13 +11,28 @@ module.exports = function(eleventyConfig) {
         return Date.now();
     }
 
-    // Add a filter to append the version to asset URLs
-    eleventyConfig.addFilter('version', function(url) {
+    // Use twig
+    eleventyConfig.addPlugin(eleventyPluginTwig, {
+        twig: {
+            namespaces: {
+                layouts: "views/layouts",
+                partials: "views/partials",
+                snippets: "views/snippets"
+            }
+        },
+        dir: {
+            input: 'views/templates',
+            output: 'www'
+        }
+    });
+
+    // // Add a filter to append the version to asset URLs
+    twig.extendFilter('version', function(url) {
         const version = generateVersion();
         return `${url}?v=${version}`;
     });
 
-    eleventyConfig.addShortcode("critical_css", function() {
+    twig.extendFunction("critical_css", function() {
         try {
             return fs.readFileSync('./www/assets/styles/critical.css', 'utf-8')
         } catch(error) {
@@ -25,20 +40,9 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    // Configure options for Liquid template engine
-    let options = {
-        extname: '.liquid',
-        dynamicPartials: true,
-        root: path.resolve(__dirname, 'views'),
-        layouts: path.resolve(__dirname, 'views/layouts')
-    };
-
-    // Set Liquid template engine with specified options
-    eleventyConfig.setLibrary('liquid', new Liquid(options));
-
     // Configure and return Eleventy settings
     return {
-        templateFormats: ['liquid'],
+        templateFormats: ['twig'],
         dir: {
             input: 'views/templates',
             output: 'www',

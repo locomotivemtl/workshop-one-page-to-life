@@ -1,0 +1,41 @@
+{# Image settings #}
+{% set _src = src | default(null) %}
+{% set _width = width | default(null) %}
+{% set _height = height | default(null) %}
+{% set _alt = alt | default(null) %}
+{% set _is_figure = is_figure ?? false %}
+{% set _is_lazy = is_lazy ?? true %}
+{% set _tag = _is_figure ? 'figure' : 'div' %}
+
+{# BASICS #}
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+{% set _attr = attr | default(null) %}
+
+{% if _classes != null %}
+    {% set _classes = ' ' ~ _classes %}
+{% endif %}
+
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
+{% endif %}
+
+{% if _is_lazy %}
+    {% set _modifiers = _modifiers ~ ' -lazy-load' %}
+{% endif %}
+
+{% if _src %}
+    <{{ _tag }} class="c-image{{ _classes }}" {{ _attr }}>
+        <img
+            class="c-image_img"
+            alt="{{ _alt }}"
+            width="{{ _width }}"
+            height="{{ _height }}"
+            src="{{ _src }}"
+            {% if _is_lazy %}
+                loading="lazy"
+                onload="this.classList.add('is-loaded'); this.parentNode.classList.add('is-loaded');"
+            {% endif %}
+        >
+    </{{ _tag }}>
+{% endif %}

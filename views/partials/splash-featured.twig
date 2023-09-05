@@ -1,12 +1,12 @@
 <section class="c-splash-featured" data-scroll data-scroll-repeat>
     <div class="c-splash-featured_header">
-        {% if splash-featured.title %}
-            <h2 class="c-heading || c-splash-featured_title">{{ splash-featured.title }}</h2>
+        {% if splash_featured.title %}
+            <h2 class="c-heading || c-splash-featured_title">{{ splash_featured.title }}</h2>
         {% endif %}
 
-        {% if splash-featured.description %}
+        {% if splash_featured.description %}
             <div class="c-splash-featured_description">
-                {% for item in splash-featured.description %}
+                {% for item in splash_featured.description %}
                     <div class="c-splash-featured_description_item">
                         <span>
                             {{ item.content }}
@@ -20,7 +20,7 @@
     <div class="c-splash-featured_marquee">
         <div class="c-splash-featured_marquee_inner">
             <div class="c-splash-featured_marquee_list">
-                {% for item in splash-featured.marquee %}
+                {% for item in splash_featured.marquee %}
                     <div class="c-splash-featured_marquee_item">
                         <span>
                             {{ item.content }}
@@ -28,7 +28,7 @@
                     </div>
                 {% endfor %}
 
-                {% for item in splash-featured.marquee %}
+                {% for item in splash_featured.marquee %}
                     <div class="c-splash-featured_marquee_item">
                         <span>
                             {{ item.content }}
@@ -39,11 +39,11 @@
         </div>
     </div>
 
-    <canvas class="c-splash-featured_canvas" data-module-splash-canvas data-splash-canvas-src="{{splash-featured.model}}" data-scroll data-scroll-module-progress></canvas>
+    <canvas class="c-splash-featured_canvas" data-module-splash-canvas data-splash-canvas-src="{{splash_featured.model}}" data-scroll data-scroll-module-progress></canvas>
 
-    {% if splash-featured.columns %}
+    {% if splash_featured.columns %}
         <div class="c-splash-featured_columns-text || c-columns-text">
-            {% for column in splash-featured.columns %}
+            {% for column in splash_featured.columns %}
                 <div class="c-columns-text_item">
                     {% if column.content %}
                         <div class="c-wysiwyg || c-columns-text_item_content">{{ column.content }}</div>
