@@ -55,6 +55,10 @@
 }
 
 .c-footer_copy_item {
+    a:hover {
+        text-decoration: underline;
+    }
+
     @media (min-width: $from-small) {
         &:last-child {
             text-align: right;

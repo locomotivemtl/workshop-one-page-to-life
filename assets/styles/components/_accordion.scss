@@ -6,6 +6,7 @@
     position: relative;
     padding: .75em 0;
     list-style: none;
+    user-select: none; // Debatable
 
     &:before {
         content: 'View';
