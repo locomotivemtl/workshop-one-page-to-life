@@ -1,7 +1,15 @@
 {
     "title": "SWAG - not just a fashion brand",
+    "hero": {
+        "label": "SWAG brand poster",
+        "img": {
+            "src": "/assets/images/hero.jpg",
+            "width": 700,
+            "height": 940
+        }
+    },
     "short_title": "SWAG",
-    "hero_label": "SWAG brand poster",
+    "og_image": "/assets/images/og.jpg",
     "copyrights": [
         "<span>Typography, <a href='https://pangrampangram.com/products/neue-montreal' target='_blank' rel='noopener noreferrer'>PP® Neue Montreal</a></span>",
         "<span>3D Model, <a href='https://sketchfab.com/3d-models/jacket-c3d2b183d3534979ad43493b4634c034' target='_blank' rel='noopener noreferrer'>Sketchfab</a> (altered)</span>",
