@@ -5,9 +5,12 @@
 
 @import "common";
 
+// Vendors
+// ==========================================================================
+@import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
+
 // Utilities
 // ==========================================================================
-
 @import "utilities/helpers";
 @import "utilities/spacing";
 
