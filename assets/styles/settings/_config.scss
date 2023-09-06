@@ -1,15 +1,6 @@
 $speed: 0.3s;
 $easing: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 
-@font-face {
-    font-family: 'PP Neue Montreal TT';
-    src: url('/assets/fonts/PPNeueMontrealTT-Medium.woff2') format('woff2'),
-        url('/assets/fonts/PPNeueMontrealTT-Medium.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
 // Breakpoints
 // =============================================================================
 $from-tiny:     500px              !default;
