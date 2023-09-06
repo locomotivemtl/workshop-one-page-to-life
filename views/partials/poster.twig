@@ -5,15 +5,9 @@
         <div class="c-wysiwyg || c-poster_description">{{ poster.description }}</div>
 
         <div class="c-poster_columns-text">
-            <div class="c-columns-text">
-                {% for column in poster.columns %}
-                    <div class="c-columns-text_item">
-                        {% if column.content %}
-                            <div class="c-wysiwyg || c-columns-text_item_content">{{ column.content }}</div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
+            {% include "@snippets/columns-text.twig" with {
+                columns: poster.columns
+            } only %}
         </div>
 
         <div class="c-poster_foot">
