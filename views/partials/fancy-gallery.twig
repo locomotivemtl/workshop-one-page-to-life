@@ -32,10 +32,10 @@
 
     <div class="c-fancy-gallery_spacer"></div>
 
-    <figcaption class="c-fancy-gallery_caption" data-scroll data-scroll-css-progress data-scroll-module-progress data-module-fancy-gallery-caption data-scroll-offset="33%,100%">
+    <figcaption class="c-fancy-gallery_caption">
         {% for word in gallery.caption | split(' ') %}
             <span class="c-fancy-gallery_word">
-                <span class="c-fancy-gallery_word-inner" data-fancy-gallery-caption="word">{{word}}</span>
+                <span class="c-fancy-gallery_word-inner">{{word}}</span>
             </span>
         {% endfor %}
     </figcaption>
