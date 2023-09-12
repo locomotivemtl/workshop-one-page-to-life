@@ -37,6 +37,7 @@ window.addEventListener('load', (event) => {
 const resizeEndEvent = new CustomEvent(CUSTOM_EVENT.RESIZE_END)
 function onResize() {
     $html.style.setProperty('--vw', `${document.documentElement.clientWidth * 0.01}px`)
+    $html.style.setProperty('--vh', `${document.documentElement.clientHeight * 0.01}px`)
     window.dispatchEvent(resizeEndEvent)
 }
 window.addEventListener('resize', debounce(onResize, 200))
