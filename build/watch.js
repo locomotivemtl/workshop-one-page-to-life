@@ -13,7 +13,8 @@ server.init({
     notify: false,
     ghostMode: false,
     server: 'www',
-    watch: true
+    watch: true,
+    port: 8080
 }, err => {
     if(err) console.error('Error:' + err)
 })
