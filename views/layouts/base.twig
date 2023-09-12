@@ -29,47 +29,6 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer
-            class="c-footer"
-            data-scroll
-            data-scroll-repeat
-            data-scroll-position="start,end"
-            data-scroll-offset="0%,99%"
-            data-scroll-css-progress
-        >
-            <div class="c-footer_marquee">
-                <div class="c-footer_marquee_inner">
-                    <div class="c-footer_marquee_list">
-                        {% for item in marquee %}
-                            <div class="c-footer_marquee_item">
-                                {% include "@snippets/image.twig" with {
-                                    src: item.img.src,
-                                    width: item.img.width,
-                                    height: item.img.height
-                                } only %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="c-container">
-                <div class="c-footer_inner">
-                    {% include "@snippets/logo.twig" with {
-                        classes: 'c-footer_logo'
-                    } only %}
-                </div>
-            </div>
-
-            <div class="c-footer_copy">
-                {% for copyright in site.copyrights %}
-                    <div class="c-footer_copy_item">
-                        {{copyright}}
-                    </div>
-                {% endfor %}
-            </div>
-        </footer>
-
         <script src="{{ '/assets/scripts/app.js' | version }}" defer></script>
     </body>
 </html>
