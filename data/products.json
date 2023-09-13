@@ -23,7 +23,7 @@
         },
         {
             "title": "Blossom Touch Gloves",
-            "tags": ["Gloves"],
+            "tags": ["Accessory"],
             "price": "$45",
             "img": {
                 "src": "/assets/images/products/gloves.jpg",
@@ -32,11 +32,11 @@
             }
         },
         {
-            "title": "Zephyr Hoodie",
-            "tags": ["Hoodie"],
+            "title": "Zephyr Scarf",
+            "tags": ["Accessory"],
             "price": "$149",
             "img": {
-                "src": "/assets/images/products/hoodie.jpg",
+                "src": "/assets/images/products/scarf.jpg",
                 "width": 620,
                 "height": 725
             }
