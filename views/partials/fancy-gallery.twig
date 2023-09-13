@@ -1,23 +1,14 @@
 <figure class="c-fancy-gallery">
-    <div class="c-fancy-gallery_sticky-area">
-        <div class="c-fancy-gallery_sticky">
-            <div class="c-fancy-gallery_grid">
-                {% for image in gallery.images %}
-                    <div class="c-fancy-gallery_grid-item">
-                        {% include "@snippets/image.twig" with {
-                            src: image.src,
-                            width: image.width,
-                            height: image.height
-                        } only %}
-                    </div>
-                {% endfor %}
-            </div>
+    <div class="c-fancy-gallery_sticky-area">{# This will define the "stickiness" boundaries #}
+        <div class="c-fancy-gallery_sticky">{# This is the element that will stick #}
+            {# Visuals grid goes here #}
         </div>
     </div>
 
-    <div class="c-fancy-gallery_spacer"></div>
+    <div class="c-fancy-gallery_spacer">{# This allows to occupy vertical space that'll define the scroll length of our animation #}</div>
 
     <figcaption class="c-fancy-gallery_caption">
+        {# Split the sentence by words #}
         {% for word in gallery.caption | split(' ') %}
             <span class="c-fancy-gallery_word">
                 <span class="c-fancy-gallery_word-inner">{{word}}</span>
