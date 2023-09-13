@@ -17,17 +17,19 @@
     <body>
         <div class="c-preloader"></div>
 
-        <header class="c-header">
-            <button class="c-header_menu-toggler">Menu</button>
-            <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
-                Shop <span aria-hidden="true">↗</span>
-            </a>
-            {# <nav class="c-menu"></nav> #}
-        </header>
+        <div data-module-scroll="main">
+            <header class="c-header">
+                <button class="c-header_menu-toggler">Menu</button>
+                <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
+                    Shop <span aria-hidden="true">↗</span>
+                </a>
+                {# <nav class="c-menu"></nav> #}
+            </header>
 
-        <main data-module-scroll="main">
-            {% block content %}{% endblock %}
-        </main>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+        </div>
 
         <script src="{{ '/assets/scripts/app.js' | version }}" defer></script>
     </body>
