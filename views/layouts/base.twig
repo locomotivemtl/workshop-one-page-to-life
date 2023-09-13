@@ -17,58 +17,59 @@
     <body>
         <div class="c-preloader"></div>
 
-        <header class="c-header">
-            <button class="c-header_menu-toggler">Menu</button>
-            <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
-                Shop <span aria-hidden="true">↗</span>
-            </a>
-            {# <nav class="c-menu"></nav> #}
-        </header>
+        <div data-module-scroll="main">
+            <header class="c-header">
+                <button class="c-header_menu-toggler">Menu</button>
+                <a href="https://locomotive.ca/" rel="noopener noreferrer" target="_blank" class="c-header_main-cta">
+                    Shop <span aria-hidden="true">↗</span>
+                </a>
+                {# <nav class="c-menu"></nav> #}
+            </header>
 
-        <main data-module-scroll="main">
-            {% block content %}{% endblock %}
-        </main>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
 
-        <footer
-            class="c-footer"
-            data-scroll
-            data-scroll-repeat
-            data-scroll-position="start,end"
-            data-scroll-offset="0%,99%"
-            data-scroll-css-progress
-        >
-            <div class="c-footer_marquee">
-                <div class="c-footer_marquee_inner">
-                    <div class="c-footer_marquee_list">
-                        {% for item in marquee %}
-                            <div class="c-footer_marquee_item">
-                                {% include "@snippets/image.twig" with {
-                                    src: item.img.src,
-                                    width: item.img.width,
-                                    height: item.img.height
-                                } only %}
-                            </div>
-                        {% endfor %}
+            <footer
+                class="c-footer"
+                data-scroll
+                data-scroll-repeat
+                data-scroll-offset="0%,100%"
+                data-scroll-css-progress
+            >
+                <div class="c-footer_marquee">
+                    <div class="c-footer_marquee_inner">
+                        <div class="c-footer_marquee_list">
+                            {% for item in marquee %}
+                                <div class="c-footer_marquee_item">
+                                    {% include "@snippets/image.twig" with {
+                                        src: item.img.src,
+                                        width: item.img.width,
+                                        height: item.img.height
+                                    } only %}
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="c-container">
-                <div class="c-footer_inner">
-                    {% include "@snippets/logo.twig" with {
-                        classes: 'c-footer_logo'
-                    } only %}
-                </div>
-            </div>
-
-            <div class="c-footer_copy">
-                {% for copyright in site.copyrights %}
-                    <div class="c-footer_copy_item">
-                        {{copyright}}
+                <div class="c-container">
+                    <div class="c-footer_inner">
+                        {% include "@snippets/logo.twig" with {
+                            classes: 'c-footer_logo'
+                        } only %}
                     </div>
-                {% endfor %}
-            </div>
-        </footer>
+                </div>
+
+                <div class="c-footer_copy">
+                    {% for copyright in site.copyrights %}
+                        <div class="c-footer_copy_item">
+                            {{copyright}}
+                        </div>
+                    {% endfor %}
+                </div>
+            </footer>
+        </div>
 
         <script src="{{ '/assets/scripts/app.js' | version }}" defer></script>
     </body>
