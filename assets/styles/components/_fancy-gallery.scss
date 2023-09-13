@@ -27,18 +27,6 @@
     height: vh(100);
     z-index: 10;
     overflow: hidden;
-
-    // OVER-ENGINEERED PROGRESS DEBUG
-    // counter-reset: progress calc(var(--progress) * 100);
-    // &:before {
-    //     display: block;
-    //     content: counter(progress); // Use counter hack because `content` only allows strings, not numbers :(
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     color: chartreuse;
-    //     z-index: 9999;
-    // }
 }
 
 // GRID
