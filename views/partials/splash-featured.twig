@@ -35,7 +35,11 @@
         </div>
     </div>
 
-    <canvas class="c-splash-featured_canvas" data-module-splash-canvas data-splash-canvas-src="{{splash_featured.model}}" data-scroll data-scroll-module-progress></canvas>
+    <canvas
+        class="c-splash-featured_canvas"
+        data-module-splash-canvas
+        data-splash-canvas-src="{{splash_featured.model}}">
+    </canvas>
 
     {% include "@snippets/columns-text.twig" with {
         classes: 'c-splash-featured_columns-text',
