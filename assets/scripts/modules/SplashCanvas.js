@@ -1,11 +1,11 @@
-import { module as Module } from 'modujs'
+import { module as module } from 'modujs'
 import gsap from 'gsap'
 import * as THREE from 'three';
 import { gltfLoader, textureLoader } from '../utils/3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { CUSTOM_EVENT } from '../config';
 
-export default class extends Module {
+export default class extends module {
     constructor(m) {
         super(m)
 
@@ -53,14 +53,6 @@ export default class extends Module {
         this.wrapper = new THREE.Group();
         this.wrapper.position.set(0,0,0);
         this.scene.add(this.wrapper)
-
-        // const pointLight = new THREE.PointLight(0x0000ff, 4000)
-        // pointLight.position.set( 20, 20, 20 );
-        // pointLight.castShadow = true; // default false
-        // this.scene.add(pointLight)
-
-        // const axesHelper = new THREE.AxesHelper( 1 );
-        // this.scene.add( axesHelper );
 
         // ==========================================================================
         // CAMERA
