@@ -1,0 +1,60 @@
+.c-poster {
+    @include -margin-large-bottom;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.c-poster_inner {
+    position: relative;
+    z-index: 1;
+    padding: var(--container-margin);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--grid-gutter);
+    min-height: 200vh;
+
+    @media (max-width: $to-medium) {
+        --grid-columns: 1;
+        min-height: 120vh;
+    }
+}
+
+.c-poster_description {
+    grid-row: 1;
+
+    @media (min-width: $from-medium) {
+        grid-column: 4/7;
+    }
+}
+
+.c-poster_columns-text {
+    display: inline-flex;
+    align-items: center;
+    grid-row: 2;
+
+    @media (min-width: $from-medium) {
+        grid-column: 1/-1;
+    }
+}
+
+.c-poster_foot {
+    display: inline-flex;
+    align-items: flex-end;
+    grid-row: 3;
+
+    @media (min-width: $from-medium) {
+        grid-column: 4/7;
+    }
+}
+
+.c-poster_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0,0,0) scale(calc(1 + (1 - var(--progress)) * 0.5));
+    transform-origin: var(--focus-point-x, "center") var(--focus-point-y, "center");
+}
