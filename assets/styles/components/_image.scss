@@ -1,0 +1,27 @@
+.c-image {
+    background-color: rgba(lighten($color-darkest, 10%), 0.5);
+}
+
+.c-image_img {
+    width: 100%;
+
+    .c-image.-cover & {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .c-image.-lazy-load & {
+        opacity: 0;
+        transition: opacity $speed $easing;
+
+        &.is-loaded {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{% set _title = title | default(null) %}
+{% set _content = content | default(null) %}
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+{% set _attr = attr | default(null) %}
+
+{% if _classes != null %}
+    {% set _classes = ' ' ~ _classes %}
+{% endif %}
+
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
+{% endif %}
+
+<details class="c-accordion {{ _classes }}" {{ _attr }}>
+    <summary class="c-accordion_summary">{{ _title }}</summary>
+    <div class="c-accordion_content">
+        <div class="c-wysiwyg">
+            {{ _content }}
+        </div>
+    </div>
+</details>
