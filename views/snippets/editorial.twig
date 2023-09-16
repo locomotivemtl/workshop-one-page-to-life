@@ -1,0 +1,20 @@
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+{% set _attr = attr | default(null) %}
+
+{% if _classes != null %}
+    {% set _classes = ' ' ~ _classes %}
+{% endif %}
+
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
+{% endif %}
+
+<section class="c-editorial {{ _classes }}" {{ _attr }}>
+    <div class="c-editorial_head">
+        {% block head %}{% endblock %}
+    </div>
+    <div class="c-editorial_content">
+        {% block content %}{% endblock %}
+    </div>
+</section>
