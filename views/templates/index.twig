@@ -3,7 +3,52 @@
 {% block content %}
     {% include "@partials/hero.twig" %}
 
+    {% embed "@snippets/editorial.twig" with {
+        modifiers: '-about',
+        classes: 'u-margin-large-bottom',
+        data: about
+    } only %}
+        {% block head %}
+            <h2>{{data.title}}</h2>
+        {% endblock %}
+        {% block content %}
+            {{ data.content }}
+        {% endblock %}
+    {% endembed %}
+
     {% include "@partials/poster.twig" %}
 
     {% include "@partials/products.twig" %}
+
+    {% embed "@snippets/editorial.twig" with {
+        modifiers: '-faq',
+        classes: 'u-margin-huge-bottom',
+        data: faq
+    } only %}
+        {% block head %}
+            <h2>{{data.title}}</h2>
+            <p>{{data.description}}</p>
+        {% endblock %}
+        {% block content %}
+            {% for item in data.items %}
+                {% include "@snippets/accordion.twig" with {
+                    title: item.title,
+                    content: item.content
+                } only %}
+            {% endfor %}
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "@snippets/editorial.twig" with {
+        modifiers: '-manifesto',
+        classes: 'u-margin-huge-bottom',
+        data: manifesto
+    } only %}
+        {% block head %}
+            <h2>{{data.title}}</h2>
+        {% endblock %}
+        {% block content %}
+            <p>{{data.description}}</p>
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
