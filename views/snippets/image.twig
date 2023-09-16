@@ -16,12 +16,12 @@
     {% set _classes = ' ' ~ _classes %}
 {% endif %}
 
-{% if _modifiers != null %}
-    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
-{% endif %}
-
 {% if _is_lazy %}
     {% set _modifiers = _modifiers ~ ' -lazy-load' %}
+{% endif %}
+
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
 {% endif %}
 
 {% if _src %}
