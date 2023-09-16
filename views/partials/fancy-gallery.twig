@@ -8,13 +8,16 @@
     >
     <div class="c-fancy-gallery_sticky-area">
         <div class="c-fancy-gallery_sticky">
-            <div class="c-fancy-gallery_grid">
+            <div class="c-fancy-gallery_grid"
+                data-fancy-gallery="grid">
                 {% for image in gallery.images %}
-                    <div class="c-fancy-gallery_grid-item">
+                    <div class="c-fancy-gallery_grid-item"
+                        data-fancy-gallery="grid-item">
                         {% include "@snippets/image.twig" with {
                             src: image.src,
                             width: image.width,
-                            height: image.height
+                            height: image.height,
+                            attr: 'data-fancy-gallery="image"'
                         } only %}
                     </div>
                 {% endfor %}
