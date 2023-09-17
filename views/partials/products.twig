@@ -1,0 +1,22 @@
+<section class="c-products || u-margin-large-bottom">
+    <h2 class="u-screen-reader-text">{{products.title}}</h2>
+
+    <div class="c-container">
+        <div class="c-products_highlight">
+            {% include "@snippets/product-tile.twig" with {
+                product: products.items[0]
+            } only %}
+        </div>
+    </div>
+
+    <div class="c-products_list">
+        {% for index, product in products.items %}
+            {% if index >= 1 %}
+                {% include '@snippets/product-tile.twig' with {
+                    classes: 'c-products_item u-margin-medium-bottom',
+                    product: product
+                } only %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
